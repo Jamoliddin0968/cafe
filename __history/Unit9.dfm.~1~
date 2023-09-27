@@ -1,0 +1,137 @@
+object frmombor: Tfrmombor
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  ClientHeight = 510
+  ClientWidth = 594
+  Color = clBtnFace
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -19
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 22
+  object Label1: TLabel
+    Left = 80
+    Top = 43
+    Width = 44
+    Height = 22
+    Caption = 'FISH'
+  end
+  object Label2: TLabel
+    Left = 80
+    Top = 99
+    Width = 69
+    Height = 22
+    Caption = 'Lavozim'
+  end
+  object Label3: TLabel
+    Left = 80
+    Top = 155
+    Width = 61
+    Height = 22
+    Caption = 'Manzili'
+  end
+  object Label4: TLabel
+    Left = 80
+    Top = 227
+    Width = 60
+    Height = 22
+    Caption = 'Telefon'
+  end
+  object Label5: TLabel
+    Left = 80
+    Top = 291
+    Width = 45
+    Height = 22
+    Caption = 'Parol'
+  end
+  object Label6: TLabel
+    Left = 80
+    Top = 347
+    Width = 54
+    Height = 22
+    Caption = 'Huquq'
+  end
+  object DBEdit1: TDBEdit
+    Left = 216
+    Top = 40
+    Width = 297
+    Height = 30
+    DataField = 'fish'
+    DataSource = DataModule3.DataSourcexodimlar
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 216
+    Top = 96
+    Width = 297
+    Height = 30
+    DataField = 'Lavozim'
+    DataSource = DataModule3.DataSourcexodimlar
+    TabOrder = 1
+  end
+  object DBEdit3: TDBEdit
+    Left = 216
+    Top = 152
+    Width = 297
+    Height = 30
+    DataField = 'manzil'
+    DataSource = DataModule3.DataSourcexodimlar
+    TabOrder = 2
+  end
+  object DBEdit4: TDBEdit
+    Left = 216
+    Top = 224
+    Width = 297
+    Height = 30
+    DataField = 'telefon'
+    DataSource = DataModule3.DataSourcexodimlar
+    TabOrder = 3
+  end
+  object DBEdit5: TDBEdit
+    Left = 216
+    Top = 288
+    Width = 297
+    Height = 30
+    DataField = 'parol'
+    DataSource = DataModule3.DataSourcexodimlar
+    TabOrder = 4
+  end
+  object ComboBox1: TDBComboBox
+    Left = 216
+    Top = 344
+    Width = 297
+    Height = 30
+    DataField = 'huquq'
+    DataSource = DataModule3.DataSourcexodimlar
+    Items.Strings = (
+      'admin'
+      'ofitsiant'
+      'NULL')
+    TabOrder = 5
+  end
+  object Button1: TButton
+    Left = 216
+    Top = 400
+    Width = 153
+    Height = 41
+    Caption = 'Bekor qilish'
+    TabOrder = 6
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 392
+    Top = 400
+    Width = 121
+    Height = 41
+    Caption = 'Tayyor'
+    TabOrder = 7
+    OnClick = Button2Click
+  end
+end

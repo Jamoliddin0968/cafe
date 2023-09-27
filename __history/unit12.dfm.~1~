@@ -1,0 +1,126 @@
+object Form12: TForm12
+  Left = 0
+  Top = 0
+  Caption = 'Form12'
+  ClientHeight = 308
+  ClientWidth = 631
+  Color = clBtnFace
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -19
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 22
+  object Label1: TLabel
+    Left = 80
+    Top = 19
+    Width = 44
+    Height = 22
+    Caption = 'Nomi'
+  end
+  object Label2: TLabel
+    Left = 80
+    Top = 67
+    Width = 46
+    Height = 22
+    Caption = 'Narxi'
+  end
+  object Label3: TLabel
+    Left = 80
+    Top = 123
+    Width = 116
+    Height = 22
+    Caption = 'O'#39'lchov birligi'
+  end
+  object Label4: TLabel
+    Left = 80
+    Top = 179
+    Width = 104
+    Height = 22
+    Caption = 'Kategoriyasi'
+  end
+  object Edit1: TEdit
+    Left = 224
+    Top = 16
+    Width = 273
+    Height = 30
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 224
+    Top = 64
+    Width = 273
+    Height = 30
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 224
+    Top = 120
+    Width = 273
+    Height = 30
+    TabOrder = 2
+  end
+  object ComboBox1: TComboBox
+    Left = 224
+    Top = 176
+    Width = 273
+    Height = 30
+    Style = csDropDownList
+    Sorted = True
+    TabOrder = 3
+    Items.Strings = (
+      'Desert'
+      'fast food'
+      'Ichimliklar'
+      'Kaboblar'
+      'Milliy taomlar'
+      'shirinlik'
+      'Uyg`ur taomlar')
+  end
+  object Button1: TButton
+    Left = 392
+    Top = 228
+    Width = 105
+    Height = 45
+    Caption = 'Tayyor'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 224
+    Top = 228
+    Width = 137
+    Height = 45
+    Caption = 'Bekor qilish'
+    TabOrder = 5
+    WordWrap = True
+    OnClick = Button2Click
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = DataModule3.ADOQueryKategoriya
+    ScopeMappings = <>
+    Left = 536
+    Top = 88
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ComboBox1
+      Track = True
+      FillDataSource = BindSourceDB1
+      FillDisplayFieldName = 'nomi'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end
