@@ -73,17 +73,17 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 	 if(chegirma+plastik+naqd != 0)
 	 {
 		 String xodim = "";
-         xodim = DataModule3->tekshir(DataModule3->ADOQueryzakaz->FieldByName("xodim")->AsString);
-		 int oxiri = DataModule3->ADOQueryzakaz->RecordCount;
-		   String stol =  DataModule3->tekshir(Form4->SpeedButton1->Hint);
+         xodim = db->tekshir(db->ADOQueryzakaz->FieldByName("xodim")->AsString);
+		 int oxiri = db->ADOQueryzakaz->RecordCount;
+		   String stol =  db->tekshir(Form4->SpeedButton1->Hint);
 	  Form4->ADOQuery1->SQL->Text = "select * from zakazview where holat=1 and stol = '"+stol+"'";
 	   Form4->	 ADOQuery1->Open();
 		Form4->	 ADOQuery2->SQL->Text = "select * from zakazview where holat=0 and stol = '"+stol+"'";
 	   Form4->	 ADOQuery2->Open();
-	   DataModule3->yordamchi->Close();
-		 DataModule3->yordamchi->SQL->Text
+	   db->yordamchi->Close();
+		 db->yordamchi->SQL->Text
 		  = "insert into kirim(naqd,plastik,chegirma,xizmat,xodim,vaqt) values('"+IntToStr(naqd)+"','"+IntToStr(plastik)+"','"+IntToStr(chegirma)+"','"+Label7->Caption+"','"+xodim+"',sysdate())";
-		 DataModule3->yordamchi->ExecSQL();
+		 db->yordamchi->ExecSQL();
           Form4->ADOQuery3->Active = 0;
 		Form4->ADOQuery3->Active = 1;
 		 Form4->frxReport3->PrintOptions->Printer="kassa";
@@ -92,44 +92,44 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
    Form4->frxReport3->PrepareReport();
    Form4->frxReport3->Print();
 
-		 DataModule3->ADOQueryzakaz->First();
+		 db->ADOQueryzakaz->First();
 		 for (int i = 0; i < oxiri; i++) {
-			 String nomi = DataModule3->tekshir(DataModule3->ADOQueryzakaz->FieldByName("nomi")->AsString);
-			 String miqdor = DataModule3->doublega(DataModule3->ADOQueryzakaz->FieldByName("miqdor")->AsString);
-			 String narxi = DataModule3->ADOQueryzakaz->FieldByName("narxi")->AsString;
+			 String nomi = db->tekshir(db->ADOQueryzakaz->FieldByName("nomi")->AsString);
+			 String miqdor = db->doublega(db->ADOQueryzakaz->FieldByName("miqdor")->AsString);
+			 String narxi = db->ADOQueryzakaz->FieldByName("narxi")->AsString;
 
-			 DataModule3->yordamchi->SQL->Text = "select * from menyu where nomi = '"+nomi+"' ";
-			 DataModule3->yordamchi->Open();
-			 String id = DataModule3->yordamchi->FieldByName("id")->AsString;
-			 DataModule3->yordamchi->Close();
-			 DataModule3->yordamchi->SQL->Text
+			 db->yordamchi->SQL->Text = "select * from menyu where nomi = '"+nomi+"' ";
+			 db->yordamchi->Open();
+			 String id = db->yordamchi->FieldByName("id")->AsString;
+			 db->yordamchi->Close();
+			 db->yordamchi->SQL->Text
 			   = "insert into sotilganlar(nomi,miqdor,sotishnarx,vaqt) values('"+nomi+"','"+miqdor+"','"+narxi+"',sysdate())";
-			 DataModule3->yordamchi->ExecSQL();
-			 DataModule3->yordamchi->SQL->Text
+			 db->yordamchi->ExecSQL();
+			 db->yordamchi->SQL->Text
 			   ="update qism set miqdori = miqdori - ('"+miqdor+"'*(SELECT max(miqdori) from tarkib where qismid = qism.id and menyuid = '"+id+"')) where id in (SELECT qismid from tarkib where menyuid = '"+id+"')";
-			 DataModule3->yordamchi->ExecSQL();
-			 DataModule3->yordamchi->SQL->Text =
+			 db->yordamchi->ExecSQL();
+			 db->yordamchi->SQL->Text =
 			  "INSERT into qismchiqim(nomi,miqdori,birligi,vaqt) SELECT nomi,'"+miqdor+"'*(SELECT max(miqdori) from tarkib where qismid = qism.id and menyuid = '"+id+"'),birligi,SYSDATE() from qism WHERE id in(SELECT qismid from tarkib where menyuid = '"+id+"')"
-			  ; DataModule3->yordamchi->ExecSQL();
-			xodim = DataModule3->tekshir(DataModule3->ADOQueryzakaz->FieldByName("xodim")->AsString);
-			 DataModule3->ADOQueryzakaz->Next();
+			  ; db->yordamchi->ExecSQL();
+			xodim = db->tekshir(db->ADOQueryzakaz->FieldByName("xodim")->AsString);
+			 db->ADOQueryzakaz->Next();
 		 }
 		 //- kassaga
 
 		// String stol = Label1->Hint;
-		 DataModule3->yordamchi->SQL->Text
+		 db->yordamchi->SQL->Text
 		  = "delete from zakaz where stol = '"+stol+"'";
-		 DataModule3->yordamchi->ExecSQL();
-		 DataModule3->yordamchi->SQL->Text
+		 db->yordamchi->ExecSQL();
+		 db->yordamchi->SQL->Text
 		  = "delete from soboy where stol = '"+stol+"'";
-		 DataModule3->yordamchi->ExecSQL();
+		 db->yordamchi->ExecSQL();
 
-		 DataModule3->ADOQueryzakaz->Active = false;
-		 DataModule3->ADOQueryzakaz->Active = true;
-		 DataModule3->ADOQuerykirim->Active = false;
-		 DataModule3->ADOQuerykirim->Active = true;
-		 DataModule3->ADOQuerysotilgan->Active = false;
-		 DataModule3->ADOQuerysotilgan->Active = true;
+		 db->ADOQueryzakaz->Active = false;
+		 db->ADOQueryzakaz->Active = true;
+		 db->ADOQuerykirim->Active = false;
+		 db->ADOQuerykirim->Active = true;
+		 db->ADOQuerysotilgan->Active = false;
+		 db->ADOQuerysotilgan->Active = true;
 
 		 ShowMessage("�������");
 		 Close();

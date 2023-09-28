@@ -42,7 +42,7 @@ object Form7: TForm7
         Width = 1149
         Height = 597
         Align = alClient
-        DataSource = DataModule3.DataSourcemenyu
+        DataSource = db.DataSourcemenyu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -368,7 +368,7 @@ object Form7: TForm7
         Width = 1149
         Height = 597
         Align = alClient
-        DataSource = DataModule3.DataSourcexodimlar
+        DataSource = db.DataSourcexodimlar
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -496,7 +496,7 @@ object Form7: TForm7
         Width = 1149
         Height = 693
         Align = alClient
-        DataSource = DataModule3.DataSourcekirim
+        DataSource = db.DataSourcekirim
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -19
@@ -619,7 +619,7 @@ object Form7: TForm7
         Width = 1149
         Height = 693
         Align = alClient
-        DataSource = DataModule3.DataSourcesotilgan
+        DataSource = db.DataSourcesotilgan
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -1004,7 +1004,7 @@ object Form7: TForm7
         Width = 1149
         Height = 640
         Align = alClient
-        DataSource = DataModule3.DataSourcekassa
+        DataSource = db.DataSourcekassa
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -1116,7 +1116,7 @@ object Form7: TForm7
         Width = 829
         Height = 660
         Align = alClient
-        DataSource = DataModule3.dstarkib
+        DataSource = db.dstarkib
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -1196,7 +1196,7 @@ object Form7: TForm7
         Width = 320
         Height = 660
         Align = alLeft
-        DataSource = DataModule3.DataSourcemenyu
+        DataSource = db.DataSourcemenyu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -29
@@ -1279,7 +1279,7 @@ object Form7: TForm7
             Width = 1141
             Height = 537
             Align = alClient
-            DataSource = DataModule3.Dsqism
+            DataSource = db.Dsqism
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clWindowText
             Font.Height = -16
@@ -1454,7 +1454,7 @@ object Form7: TForm7
             Width = 1141
             Height = 521
             Align = alClient
-            DataSource = DataModule3.Dsprixod
+            DataSource = db.Dsprixod
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clWindowText
             Font.Height = -16
@@ -1543,7 +1543,7 @@ object Form7: TForm7
             Top = 0
             Width = 1141
             Height = 49
-            DataSource = DataModule3.Dsprixod
+            DataSource = db.Dsprixod
             VisibleButtons = [nbInsert, nbDelete, nbPost]
             Align = alTop
             TabOrder = 1
@@ -1649,7 +1649,7 @@ object Form7: TForm7
           Width = 552
           Height = 460
           Align = alClient
-          DataSource = DataModule3.DataSourceKategoriya
+          DataSource = db.DataSourceKategoriya
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
           Font.Height = -24
@@ -1688,7 +1688,7 @@ object Form7: TForm7
           Width = 546
           Height = 70
           Margins.Top = 15
-          DataSource = DataModule3.DataSourceKategoriya
+          DataSource = db.DataSourceKategoriya
           VisibleButtons = [nbInsert, nbDelete, nbPost]
           Align = alTop
           TabOrder = 1
@@ -1709,7 +1709,7 @@ object Form7: TForm7
           Width = 577
           Height = 460
           Align = alClient
-          DataSource = DataModule3.DataSourcestol
+          DataSource = db.DataSourcestol
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
           Font.Height = -24
@@ -1762,7 +1762,7 @@ object Form7: TForm7
           Width = 571
           Height = 70
           Margins.Top = 15
-          DataSource = DataModule3.DataSourcestol
+          DataSource = db.DataSourcestol
           VisibleButtons = [nbInsert, nbDelete, nbPost]
           Align = alTop
           TabOrder = 1
@@ -1788,7 +1788,7 @@ object Form7: TForm7
           Width = 329
           Height = 32
           DataField = 'qiymati'
-          DataSource = DataModule3.dsfoiz
+          DataSource = db.dsfoiz
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
           Font.Height = -21

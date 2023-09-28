@@ -31,16 +31,16 @@ void __fastcall TForm13::Button2Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm13::Button3Click(TObject *Sender)
 {
-		if(DataModule3->ADOtarkib->RecordCount != 0){
-		String id = DataModule3->ADOtarkib->FieldByName("id")->AsString;
-		String nomi = DataModule3->ADOtarkib->FieldByName("qism")->AsString;
+		if(db->ADOtarkib->RecordCount != 0){
+		String id = db->ADOtarkib->FieldByName("id")->AsString;
+		String nomi = db->ADOtarkib->FieldByName("qism")->AsString;
 		switch(MessageDlg(nomi + " ni o'chirasizmi ?",mtWarning,mbYesNo,1)){
 			  case mrYes :
-					  DataModule3->yordamchi->Close();
-					  DataModule3->yordamchi->SQL->Text = "delete from tarkib where id = '"+id+"'";
-					  DataModule3->yordamchi->ExecSQL();
-					  DataModule3->ADOtarkib->Active = false;
-					  DataModule3->ADOtarkib->Active = true;
+					  db->yordamchi->Close();
+					  db->yordamchi->SQL->Text = "delete from tarkib where id = '"+id+"'";
+					  db->yordamchi->ExecSQL();
+					  db->ADOtarkib->Active = false;
+					  db->ADOtarkib->Active = true;
 				break;
 				   }
 		}

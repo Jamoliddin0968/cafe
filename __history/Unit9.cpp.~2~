@@ -46,10 +46,10 @@ __fastcall Tfrmombor::Tfrmombor(TComponent* Owner)
 	: TForm(Owner)
 {
 	Application->ProcessMessages();
-//	DataModule3->ADOQism->First();
-//	for (int i = 0; i < DataModule3->ADOQism->RecordCount; i++) {
-//		 DBGrid4->Columns->operator [](1)->PickList->Add(DataModule3->ADOQism->FieldByName("nomi")->AsString);
-//		 DataModule3->ADOQism->Next();
+//	db->ADOQism->First();
+//	for (int i = 0; i < db->ADOQism->RecordCount; i++) {
+//		 DBGrid4->Columns->operator [](1)->PickList->Add(db->ADOQism->FieldByName("nomi")->AsString);
+//		 db->ADOQism->Next();
 //	}
 
 
@@ -95,27 +95,27 @@ void __fastcall Tfrmombor::SpeedButton8Click(TObject *Sender)
 	 cell.OlePropertyGet("Font").OlePropertySet("Size",16);
 	 cell.OlePropertySet("ColumnWidth",WideString("20"));
 //
-//		  DataModule3->ADOQuerysotilganxom->First();
-//	 for (int i=2; i < DataModule3->ADOQuerysotilganxom->RecordCount+2; i++)
+//		  db->ADOQuerysotilganxom->First();
+//	 for (int i=2; i < db->ADOQuerysotilganxom->RecordCount+2; i++)
 //	 {
 //		 int j=i-1;
 //		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,1);
 //		 cell.OlePropertySet("Value",WideString(j));
 //		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,2);
 //		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-//		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilganxom->FieldByName("Nomi")->AsWideString));
+//		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilganxom->FieldByName("Nomi")->AsWideString));
 //
 //		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,3);
 //		 cell.OlePropertySet("Value",WideString(j));
 //		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-//		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilganxom->FieldByName("Miqdor")->AsString));
+//		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilganxom->FieldByName("Miqdor")->AsString));
 //
 //		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,4);
 //		 cell.OlePropertySet("Value",WideString(j));
 //		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-//		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilganxom->FieldByName("Vaqt")->AsString));
+//		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilganxom->FieldByName("Vaqt")->AsString));
 //
-//		 DataModule3->ADOQuerysotilganxom->Next();
+//		 db->ADOQuerysotilganxom->Next();
 //
 //		  }
 }
@@ -172,20 +172,20 @@ void __fastcall Tfrmombor::SpeedButton7Click(TObject *Sender)
 	 cell.OlePropertySet("ColumnWidth",WideString("20"));
 
 
-	 DataModule3->ADOQuerysotilgan->First();
-	 for (int i=2; i < DataModule3->ADOQuerysotilgan->RecordCount+2; i++)
+	 db->ADOQuerysotilgan->First();
+	 for (int i=2; i < db->ADOQuerysotilgan->RecordCount+2; i++)
 	 {
 		 int j=i-1;
 		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,1);
 		 cell.OlePropertySet("Value",WideString(j));
 		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,2);
 		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilgan->FieldByName("Nomi")->AsWideString));
+		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilgan->FieldByName("Nomi")->AsWideString));
 
 		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,3);
 		 cell.OlePropertySet("Value",WideString(j));
 		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-                 String bbc = DataModule3->ADOQuerysotilgan->FieldByName("Miqdor")->AsString;
+                 String bbc = db->ADOQuerysotilgan->FieldByName("Miqdor")->AsString;
                  int uzunligi = bbc.Pos(".");
                  if(uzunligi!=0)
                  {
@@ -196,19 +196,19 @@ void __fastcall Tfrmombor::SpeedButton7Click(TObject *Sender)
 		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,4);
 		 cell.OlePropertySet("Value",WideString(j));
 		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilgan->FieldByName("Sotishnarx")->AsString));
+		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilgan->FieldByName("Sotishnarx")->AsString));
 
 		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,5);
 		 cell.OlePropertySet("Value",WideString(j));
 		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilgan->FieldByName("Summa")->AsInteger));
+		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilgan->FieldByName("Summa")->AsInteger));
 
 		 cell=sheet.OlePropertyGet("Cells").OlePropertyGet("Item",i,6);
 		 cell.OlePropertySet("Value",WideString(j));
 		 cell.OlePropertyGet("Borders").OlePropertySet("LineStyle",1);
-		 cell.OlePropertySet("Value",WideString(DataModule3->ADOQuerysotilgan->FieldByName("Vaqt")->AsWideString));
+		 cell.OlePropertySet("Value",WideString(db->ADOQuerysotilgan->FieldByName("Vaqt")->AsWideString));
 
-		 DataModule3->ADOQuerysotilgan->Next();
+		 db->ADOQuerysotilgan->Next();
           }
 
 }
@@ -219,29 +219,29 @@ void __fastcall Tfrmombor::SpeedButton5Click(TObject *Sender)
 //if (LabeledEdit1->Text.Trim()!="" && LabeledEdit2->Text!="" && LabeledEdit3->Text.Trim()!="" && ComboBox2->Text.Trim()!="")
 //{
 //	double a=LabeledEdit1->Text.ToDouble(),b=LabeledEdit2->Text.ToDouble();
-//	DataModule3->ADOQueryimport->Close();
-//	DataModule3->ADOQueryimport->SQL->Text="insert into import (Nomi,narx,miqdor,birlik,summa,vaqt) values('"+ComboBox2->Text+"',"+LabeledEdit1->Text+",'"+LabeledEdit2->Text+"','"+LabeledEdit3->Text+"','"+FloatToStr(a*b)+"','"+Now().FormatString("yyyy-mm-dd hh:mm:ss")+"' )";
-//	DataModule3->ADOQueryimport->ExecSQL();
-//	DataModule3->ADOQueryimport->SQL->Text="select * from import";
-//	DataModule3->ADOQueryimport->Open();
-//	DataModule3->ADOQueryombor->SQL->Text="select * from ombor where nomi='"+ComboBox2->Text+"' and narx="+FloatToStr(a)+"";
-//	DataModule3->ADOQueryombor->Open();
-//	if(DataModule3->ADOQueryombor->RecordCount==1)
+//	db->ADOQueryimport->Close();
+//	db->ADOQueryimport->SQL->Text="insert into import (Nomi,narx,miqdor,birlik,summa,vaqt) values('"+ComboBox2->Text+"',"+LabeledEdit1->Text+",'"+LabeledEdit2->Text+"','"+LabeledEdit3->Text+"','"+FloatToStr(a*b)+"','"+Now().FormatString("yyyy-mm-dd hh:mm:ss")+"' )";
+//	db->ADOQueryimport->ExecSQL();
+//	db->ADOQueryimport->SQL->Text="select * from import";
+//	db->ADOQueryimport->Open();
+//	db->ADOQueryombor->SQL->Text="select * from ombor where nomi='"+ComboBox2->Text+"' and narx="+FloatToStr(a)+"";
+//	db->ADOQueryombor->Open();
+//	if(db->ADOQueryombor->RecordCount==1)
 //    {
-//		 String id=DataModule3->ADOQueryombor->FieldByName("id")->AsString;
-//    	double c=DataModule3->ADOQueryombor->FieldByName("miqdor")->AsFloat;
-//		DataModule3->ADOQueryombor->Close();
-//    	DataModule3->ADOQueryombor->SQL->Text="update ombor set miqdor= '"+FloatToStr(c+b)+"' ,summa =  '"+FloatToStr((c+b)*a)+"'  where id= "+id+" ";
+//		 String id=db->ADOQueryombor->FieldByName("id")->AsString;
+//    	double c=db->ADOQueryombor->FieldByName("miqdor")->AsFloat;
+//		db->ADOQueryombor->Close();
+//    	db->ADOQueryombor->SQL->Text="update ombor set miqdor= '"+FloatToStr(c+b)+"' ,summa =  '"+FloatToStr((c+b)*a)+"'  where id= "+id+" ";
 //    }
 //	else
 //    {
-//    	DataModule3->ADOQueryombor->Close();
-//		DataModule3->ADOQueryombor->SQL->Text
+//    	db->ADOQueryombor->Close();
+//		db->ADOQueryombor->SQL->Text
 //         ="insert into ombor(Nomi,birlik,miqdor,narx, summa) values ('"+ComboBox2->Text+"','"+LabeledEdit3->Text+"','"+LabeledEdit2->Text+"',"+LabeledEdit1->Text+" , '"+FloatToStr(a*b)+"' )";
 //    }
-//	 DataModule3->ADOQueryombor->ExecSQL();
-//     DataModule3->ADOQueryombor->SQL->Text="select * from ombor";
-//     DataModule3->ADOQueryombor->Open();
+//	 db->ADOQueryombor->ExecSQL();
+//     db->ADOQueryombor->SQL->Text="select * from ombor";
+//     db->ADOQueryombor->Open();
 //	 SpeedButton6->Click();
 //	 ShowMessage("Operatsiya muvaffaqiyatli bajarildi");
 //}
@@ -250,13 +250,13 @@ void __fastcall Tfrmombor::SpeedButton5Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall Tfrmombor::FormActivate(TObject *Sender)
 {
-// DataModule3->ADOQueryombor->SQL->Text="select * from ombor";
-// DataModule3->ADOQueryombor->Open();
-// DataModule3->ADOQueryombor->First();
-// for(int i=0;i<DataModule3->ADOQueryombor->RecordCount;i++)
+// db->ADOQueryombor->SQL->Text="select * from ombor";
+// db->ADOQueryombor->Open();
+// db->ADOQueryombor->First();
+// for(int i=0;i<db->ADOQueryombor->RecordCount;i++)
 // {
-//	  ComboBox2->Items->Add(DataModule3->ADOQueryombor->FieldByName("Nomi")->AsString);
-//	  DataModule3->ADOQueryombor->Next();
+//	  ComboBox2->Items->Add(db->ADOQueryombor->FieldByName("Nomi")->AsString);
+//	  db->ADOQueryombor->Next();
 // }
 }
 //---------------------------------------------------------------------------
@@ -266,29 +266,29 @@ void __fastcall Tfrmombor::SpeedButton6Click(TObject *Sender)
 //  LabeledEdit2->Text="";
 //  LabeledEdit3->Text="";
 //  ComboBox2->Text="";
-//  DataModule3->ADOQueryimport->SQL->Text
+//  db->ADOQueryimport->SQL->Text
 //	= "select * from import order by id desc ";
-//  DataModule3->ADOQueryimport->Open();
+//  db->ADOQueryimport->Open();
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall Tfrmombor::ComboBox3Change(TObject *Sender)
 {
-//	  DataModule3->ADOQuerymenyuxomashyo->SQL->Text="select * from menyuxomashyo where nomi like '%"+ComboBox3->Text+"%' ";
-//      DataModule3->ADOQuerymenyuxomashyo->Open();
+//	  db->ADOQuerymenyuxomashyo->SQL->Text="select * from menyuxomashyo where nomi like '%"+ComboBox3->Text+"%' ";
+//      db->ADOQuerymenyuxomashyo->Open();
 }
 //---------------------------------------------------------------------------
 void __fastcall Tfrmombor::LabeledEdit4Change(TObject *Sender)
 {
-//	  DataModule3->ADOQuerysotilganxom->SQL->Text="select * from  sot_xom where nomi like '%"+LabeledEdit4->Text.Trim()+"%' order by id desc ";
-//      DataModule3->ADOQuerysotilganxom->Open();
+//	  db->ADOQuerysotilganxom->SQL->Text="select * from  sot_xom where nomi like '%"+LabeledEdit4->Text.Trim()+"%' order by id desc ";
+//      db->ADOQuerysotilganxom->Open();
 }
 //---------------------------------------------------------------------------
 void __fastcall Tfrmombor::DateTimePicker4Change(TObject *Sender)
 {
-//	 DataModule3->ADOQuerysotilganxom->SQL->Text="select * from  sot_xom where vaqt between '"+DateTimePicker3->Date.FormatString("yyyy-mm-dd")+"' and '"+DateTimePicker4->Date.FormatString("yyyy-mm-dd")+"' order by id desc ";
-//     DataModule3->ADOQuerysotilganxom->Open();
+//	 db->ADOQuerysotilganxom->SQL->Text="select * from  sot_xom where vaqt between '"+DateTimePicker3->Date.FormatString("yyyy-mm-dd")+"' and '"+DateTimePicker4->Date.FormatString("yyyy-mm-dd")+"' order by id desc ";
+//     db->ADOQuerysotilganxom->Open();
 }
 //---------------------------------------------------------------------------
 
@@ -301,7 +301,7 @@ void __fastcall Tfrmombor::DateTimePicker4Change(TObject *Sender)
 
 void __fastcall Tfrmombor::Button5Click(TObject *Sender)
 {
-   // DataModule3->ADOprixod->ClearFields();
+   // db->ADOprixod->ClearFields();
 
 }
 //---------------------------------------------------------------------------
@@ -327,8 +327,8 @@ void __fastcall Tfrmombor::AcctsButtonClick(TObject *Sender)
 
 void __fastcall Tfrmombor::SearchBox2Change(TObject *Sender)
 {
-//	DataModule3->ADOQuerymenyu->SQL->Text = "select * from menyu where nomi like '%"+DataModule3->tekshir(SearchBox2->Text.Trim())+"%' ";
-//	DataModule3->ADOQuerymenyu->Open() ;
+//	db->ADOQuerymenyu->SQL->Text = "select * from menyu where nomi like '%"+db->tekshir(SearchBox2->Text.Trim())+"%' ";
+//	db->ADOQuerymenyu->Open() ;
 }
 //---------------------------------------------------------------------------
 
@@ -336,21 +336,21 @@ void __fastcall Tfrmombor::SearchBox2Change(TObject *Sender)
 
 void __fastcall Tfrmombor::Button2Click(TObject *Sender)
 {
-	DataModule3->ADOQueryxodimlar->Post();
+	db->ADOQueryxodimlar->Post();
     Close();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall Tfrmombor::Button1Click(TObject *Sender)
 {
-	 DataModule3->ADOQueryxodimlar->Cancel();
+	 db->ADOQueryxodimlar->Cancel();
 	 Close();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall Tfrmombor::FormClose(TObject *Sender, TCloseAction &Action)
 {
-	DataModule3->ADOQueryxodimlar->Cancel();
+	db->ADOQueryxodimlar->Cancel();
 }
 //---------------------------------------------------------------------------
 

@@ -25,17 +25,17 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
       }
 
 			String id = IntToStr((int) ComboBox1->Items->Objects[ComboBox1->ItemIndex]);
-			String m =  DataModule3->doublega(NumberBox1->Text.Trim());
-			String n = DataModule3->tekshir(NumberBox2->Text.Trim());
-			DataModule3->yordamchi->SQL->Text = "update qism set miqdori = miqdori+'"+m+"' , narxi = '"+n+"' where id = '"+id+"' ";
-			DataModule3->yordamchi->ExecSQL();
-			DataModule3->yordamchi->SQL->Text = "insert into qismkirim(nomi,miqdori,narxi,vaqt) values('"+DataModule3->tekshir(ComboBox1->Text.Trim())+"','"+m+"','"+n+"',sysdate())";
-			DataModule3->yordamchi->ExecSQL();
+			String m =  db->doublega(NumberBox1->Text.Trim());
+			String n = db->tekshir(NumberBox2->Text.Trim());
+			db->yordamchi->SQL->Text = "update qism set miqdori = miqdori+'"+m+"' , narxi = '"+n+"' where id = '"+id+"' ";
+			db->yordamchi->ExecSQL();
+			db->yordamchi->SQL->Text = "insert into qismkirim(nomi,miqdori,narxi,vaqt) values('"+db->tekshir(ComboBox1->Text.Trim())+"','"+m+"','"+n+"',sysdate())";
+			db->yordamchi->ExecSQL();
 	 ShowMessage("Tayyor");
-	 DataModule3->ADOQismkirim->Active = 0;
-	 DataModule3->ADOQismkirim->Active = 1;
-	 DataModule3->ADOQism->Active = 0;
-	 DataModule3->ADOQism->Active = 1;
+	 db->ADOQismkirim->Active = 0;
+	 db->ADOQismkirim->Active = 1;
+	 db->ADOQism->Active = 0;
+	 db->ADOQism->Active = 1;
      Button2->Click();
 }
 //---------------------------------------------------------------------------
@@ -52,13 +52,13 @@ void __fastcall TForm14::Button2Click(TObject *Sender)
 void __fastcall TForm14::FormActivate(TObject *Sender)
 {
     ComboBox1->Clear();
-	DataModule3->yordamchi->SQL->Text = "select id,nomi from qism";
-	DataModule3->yordamchi->Open();
-	DataModule3->yordamchi->First();
-	for (int i = 0; i < DataModule3->yordamchi->RecordCount; i++) {
-		ComboBox1->Items->AddObject(DataModule3->yordamchi->FieldByName("nomi")->AsString,
-            (TObject *) DataModule3->yordamchi->FieldByName("id")->AsInteger) ;
-		DataModule3->yordamchi->Next();
+	db->yordamchi->SQL->Text = "select id,nomi from qism";
+	db->yordamchi->Open();
+	db->yordamchi->First();
+	for (int i = 0; i < db->yordamchi->RecordCount; i++) {
+		ComboBox1->Items->AddObject(db->yordamchi->FieldByName("nomi")->AsString,
+            (TObject *) db->yordamchi->FieldByName("id")->AsInteger) ;
+		db->yordamchi->Next();
 	}
 }
 //---------------------------------------------------------------------------

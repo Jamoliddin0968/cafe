@@ -19,8 +19,8 @@
 
 #pragma link "frxTableObject"
 #pragma resource "*.dfm"
-TDataModule3 *DataModule3;
-String TDataModule3::doublega(String son){
+Tdb *db;
+String Tdb::doublega(String son){
 	String natija="" ;
 	int k = son.Pos(",");
 	if(k != 0)
@@ -35,12 +35,13 @@ String TDataModule3::doublega(String son){
 
 }
 //---------------------------------------------------------------------------
-__fastcall TDataModule3::TDataModule3(TComponent* Owner)
+__fastcall Tdb::Tdb(TComponent* Owner)
 	: TDataModule(Owner)
 {
+    Application->ProcessMessages();
 }
 //---------------------------------------------------------------------------
-String TDataModule3::tekshir(String qiymat)
+String Tdb::tekshir(String qiymat)
 {
 		String natija="" ;
 		while(qiymat.Length() > 0)
@@ -62,7 +63,7 @@ String TDataModule3::tekshir(String qiymat)
 
 
 
-void __fastcall TDataModule3::ADOprixodCalcFields(TDataSet *DataSet)
+void __fastcall Tdb::ADOprixodCalcFields(TDataSet *DataSet)
 {
 	ADOprixod->FieldByName("summa")->AsString = ADOprixod->FieldByName("narxi")->AsInteger *ADOprixod->FieldByName("miqdori")->AsFloat;
 }
@@ -70,9 +71,9 @@ void __fastcall TDataModule3::ADOprixodCalcFields(TDataSet *DataSet)
 
 
 
-void __fastcall TDataModule3::ADOprixodnomiValidate(TField *Sender)
+void __fastcall Tdb::ADOprixodnomiValidate(TField *Sender)
 {
-	String s = DataModule3->tekshir(DataModule3->ADOprixod->FieldByName("nomi")->AsString.Trim());
+	String s = db->tekshir(DataModule3->ADOprixod->FieldByName("nomi")->AsString.Trim());
 	if(s == "" )
 	  return;
 	DataModule3->yordamchi->SQL->Text = " select * from qism where nomi = '"+s+"'";

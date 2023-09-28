@@ -101,7 +101,7 @@ object Form12: TForm12
     OnClick = Button2Click
   end
   object BindSourceDB1: TBindSourceDB
-    DataSet = DataModule3.ADOQueryKategoriya
+    DataSet = db.ADOQueryKategoriya
     ScopeMappings = <>
     Left = 536
     Top = 88

@@ -110,7 +110,7 @@ object Form4: TForm4
           Align = alClient
           BorderStyle = bsNone
           Color = clWhite
-          DataSource = DataModule3.DataSourcezakaz
+          DataSource = db.DataSourcezakaz
           FixedColor = clWhite
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
@@ -1624,7 +1624,7 @@ object Form4: TForm4
     end
   end
   object BindSourceDB1: TBindSourceDB
-    DataSet = DataModule3.login
+    DataSet = db.login
     ScopeMappings = <>
     Left = 608
     Top = 400
@@ -1643,7 +1643,7 @@ object Form4: TForm4
     end
   end
   object ADOQuery1: TADOQuery
-    Connection = DataModule3.ADOConnection1
+    Connection = db.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -1652,7 +1652,7 @@ object Form4: TForm4
     Top = 542
   end
   object ADOQuery2: TADOQuery
-    Connection = DataModule3.ADOConnection1
+    Connection = db.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -1904,7 +1904,7 @@ object Form4: TForm4
     end
   end
   object ADOQuery3: TADOQuery
-    Connection = DataModule3.ADOConnection1
+    Connection = db.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (

@@ -26,14 +26,14 @@ void __fastcall TForm8::Edit2KeyPress(TObject *Sender, System::WideChar &Key)
 {
 	 if(Key == 13){
 			if(Edit2->Text.Length()>0){
-                String id = DataModule3->ADOQueryzakaz->FieldByName("id")->AsString;
-				DataModule3->yordamchi->Close();
-				DataModule3->yordamchi->SQL->Text = " update zakaz set miqdori='"+Edit2->Text+"', type=1 where id = '"+id+"' " ;
-				DataModule3->yordamchi->ExecSQL();
-				DataModule3->yordamchi->SQL->Text = " update zakaz set miqdor = miqdor - '"+Edit2->Text+"' where id = '"+id+"'" ;
-				DataModule3->yordamchi->ExecSQL();
-				DataModule3->ADOQueryzakaz->Active = 0;
-				DataModule3->ADOQueryzakaz->Active = 1;
+                String id = db->ADOQueryzakaz->FieldByName("id")->AsString;
+				db->yordamchi->Close();
+				db->yordamchi->SQL->Text = " update zakaz set miqdori='"+Edit2->Text+"', type=1 where id = '"+id+"' " ;
+				db->yordamchi->ExecSQL();
+				db->yordamchi->SQL->Text = " update zakaz set miqdor = miqdor - '"+Edit2->Text+"' where id = '"+id+"'" ;
+				db->yordamchi->ExecSQL();
+				db->ADOQueryzakaz->Active = 0;
+				db->ADOQueryzakaz->Active = 1;
                 Close();
 			}
 	 }

@@ -108,7 +108,8 @@ __published:	// IDE-managed Components
 	TDatePicker *DatePicker1;
 	TDatePicker *DatePicker2;
 	TButton *Button7;
-	void __fastcall SplitViewClosing(TObject *Sender);
+//	void __fastcall Sender);
+void __fastcall SplitViewClosing(TObject *Sender);
 	void __fastcall SplitViewOpening(TObject *Sender);
 	void __fastcall MenuVirtualImageClick(TObject *Sender);
 	void __fastcall DashboardButtonClick(TObject *Sender);

@@ -2044,7 +2044,7 @@ object DM: TDM
     Top = 456
     Datasets = <
       item
-        DataSet = DataModule3.frxDBDataset2
+        DataSet = db.frxDBDataset2
         DataSetName = 'frxDBDataset2'
       end
       item

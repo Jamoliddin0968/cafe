@@ -37,20 +37,20 @@ void TForm4::stol_create(String caption, int uzunlik)
 void __fastcall TForm4::Stolklik(TObject* Sender)
 {
     // stol tanlashga
-    String stolnomi = DataModule3->tekshir(((TButton*)Sender)->Caption);
+    String stolnomi = db->tekshir(((TButton*)Sender)->Caption);
     if (!change) {
-        DataModule3->ADOQueryzakaz->SQL->Text =
+        db->ADOQueryzakaz->SQL->Text =
             "select * from zakazview where stol = '" + stolnomi + "' ";
-        DataModule3->ADOQueryzakaz->Open();
+        db->ADOQueryzakaz->Open();
     } else {
-        DataModule3->yordamchi->Close();
-        DataModule3->yordamchi->SQL->Text = "update zakaz set stol = '" +
+        db->yordamchi->Close();
+        db->yordamchi->SQL->Text = "update zakaz set stol = '" +
                                             stolnomi + "' where stol =  '" +
                                             SpeedButton1->Hint + "' ";
-        DataModule3->yordamchi->ExecSQL();
-        DataModule3->ADOQueryzakaz->SQL->Text =
+        db->yordamchi->ExecSQL();
+        db->ADOQueryzakaz->SQL->Text =
             "select * from zakazview where stol = '" + stolnomi + "' ";
-        DataModule3->ADOQueryzakaz->Open();
+        db->ADOQueryzakaz->Open();
         change = false;
     }
     CardPanel1->ActiveCardIndex = 1;
@@ -66,17 +66,17 @@ void TForm4::yangila()
         sbutton->StyleName = "Lavender Classico";
 	}
 //
-//    DataModule3->yordamchi->Close();
-    DataModule3->yordamchi->SQL->Text = "select * from bandstol";
-    DataModule3->yordamchi->Open();
-    DataModule3->yordamchi->First();
-    for (int i = 0; i < DataModule3->yordamchi->RecordCount; i++) {
-        String stolnomi = DataModule3->yordamchi->FieldByName("stol")->AsString;
+//    db->yordamchi->Close();
+    db->yordamchi->SQL->Text = "select * from bandstol";
+    db->yordamchi->Open();
+    db->yordamchi->First();
+    for (int i = 0; i < db->yordamchi->RecordCount; i++) {
+        String stolnomi = db->yordamchi->FieldByName("stol")->AsString;
         for (int j = 0; j < stolpanel->ControlCount; j++) {
             TButton* sbutton = ((TButton*)stolpanel->Controls[j]);
             if (stolnomi == sbutton->Caption) {
                 sbutton->StyleName = "Windows10 Green";
-                DataModule3->yordamchi->Next();
+                db->yordamchi->Next();
                 continue;
             }
         }
@@ -87,12 +87,12 @@ void TForm4::hisobla()
 {
     // umumiy summani hisoblash
     int sum = 0;
-    DataModule3->yordamchi->SQL->Text = DataModule3->ADOQueryzakaz->SQL->Text;
-	DataModule3->yordamchi->Open();
-    DataModule3->yordamchi->First();
-    for (int i = 0; i < DataModule3->yordamchi->RecordCount; i++) {
-        sum += DataModule3->yordamchi->FieldByName("summa")->AsFloat;
-        DataModule3->yordamchi->Next();
+    db->yordamchi->SQL->Text = db->ADOQueryzakaz->SQL->Text;
+	db->yordamchi->Open();
+    db->yordamchi->First();
+    for (int i = 0; i < db->yordamchi->RecordCount; i++) {
+        sum += db->yordamchi->FieldByName("summa")->AsFloat;
+        db->yordamchi->Next();
     }
     Label2->Caption = int(sum);
 }
@@ -102,8 +102,8 @@ __fastcall TForm4::TForm4(TComponent* Owner) : TForm(Owner)
     this->Width = Screen->Width;
     int uzunlik = stolpanel->Width / 6 - 12;
     // stol yaratish
-    DataModule3->ADOQuerystol->First();
-    for (int i = 0; i < DataModule3->ADOQuerystol->RecordCount; i++) {
+    db->ADOQuerystol->First();
+    for (int i = 0; i < db->ADOQuerystol->RecordCount; i++) {
         TButton* spanel = new TButton(stolpanel);
         spanel->Parent = stolpanel;
         spanel->AlignWithMargins = true; // cegara
@@ -116,9 +116,9 @@ __fastcall TForm4::TForm4(TComponent* Owner) : TForm(Owner)
         spanel->Font->Size = 26;
         spanel->Font->Style << fsBold;
         spanel->Caption =
-            DataModule3->ADOQuerystol->FieldByName("stol")->AsString;
+            db->ADOQuerystol->FieldByName("stol")->AsString;
         spanel->OnClick = Stolklik;
-        DataModule3->ADOQuerystol->Next();
+        db->ADOQuerystol->Next();
     }
     //===========================================
     stol_create("Dastavka", uzunlik);
@@ -128,16 +128,16 @@ __fastcall TForm4::TForm4(TComponent* Owner) : TForm(Owner)
 
     CardPanel1->ActiveCardIndex = 0;
 
-	//kategoriya yaratish	DataModule3->yordamchi->Active=0;
-//    DataModule3->yordamchi->Active=1;
+	//kategoriya yaratish	db->yordamchi->Active=0;
+//    db->yordamchi->Active=1;
 //
-	DataModule3->pomosh->SQL->Text =
+	db->pomosh->SQL->Text =
 		"select * from kategoriya order by nomi asc ";
-	DataModule3->yordamchi->Open();
-	DataModule3->yordamchi->First();
+	db->yordamchi->Open();
+	db->yordamchi->First();
 
     uzunlik = FlowPanel2->Width / 2 - 2;
-    for (int i = 0; i < DataModule3->yordamchi->RecordCount; i++) {
+    for (int i = 0; i < db->yordamchi->RecordCount; i++) {
         TButton* k = new TButton(FlowPanel2);
         k->AlignWithMargins = true;
         k->Margins->SetBounds(1, 3, 1, 3);
@@ -146,17 +146,17 @@ __fastcall TForm4::TForm4(TComponent* Owner) : TForm(Owner)
         k->Height = 90;
         k->Parent = (FlowPanel2);
         k->OnClick = kategoriyaklik;
-        k->Caption = DataModule3->yordamchi->FieldByName("nomi")->AsString;
-        DataModule3->yordamchi->Next();
+        k->Caption = db->yordamchi->FieldByName("nomi")->AsString;
+        db->yordamchi->Next();
     }
 
     //  tovarga button yaratish
-    DataModule3->yordamchi->SQL->Text =
+    db->yordamchi->SQL->Text =
         "select * from menyuview order by nomi asc ";
-    DataModule3->yordamchi->Open();
-    DataModule3->yordamchi->First();
+    db->yordamchi->Open();
+    db->yordamchi->First();
     uzunlik = FlowPanel1->Width / 3 - 4;
-    for (int i = 0; i < DataModule3->yordamchi->RecordCount; i++) {
+    for (int i = 0; i < db->yordamchi->RecordCount; i++) {
         TButton* k = new TButton(FlowPanel1);
         k->AlignWithMargins = true;
         k->Margins->SetBounds(2, 3, 2, 3);
@@ -164,10 +164,10 @@ __fastcall TForm4::TForm4(TComponent* Owner) : TForm(Owner)
 
         k->Parent = (FlowPanel1);
         k->Visible = false;
-        String tovar_id = DataModule3->yordamchi->FieldByName("id")->AsString;
-        String knomi = DataModule3->yordamchi->FieldByName("knomi")->AsString;
-        String tnomi = DataModule3->yordamchi->FieldByName("nomi")->AsString;
-        String narxi = DataModule3->yordamchi->FieldByName("narxi")->AsString;
+        String tovar_id = db->yordamchi->FieldByName("id")->AsString;
+        String knomi = db->yordamchi->FieldByName("knomi")->AsString;
+        String tnomi = db->yordamchi->FieldByName("nomi")->AsString;
+        String narxi = db->yordamchi->FieldByName("narxi")->AsString;
         k->Caption = tnomi + "\n" + narxi;
 
         k->HelpKeyword = tovar_id;
@@ -176,7 +176,7 @@ __fastcall TForm4::TForm4(TComponent* Owner) : TForm(Owner)
         k->Tag = narxi != "" ? narxi.ToInt() : 0;
         k->OnClick = tovarklik;
         k->WordWrap = 1;
-        DataModule3->yordamchi->Next();
+        db->yordamchi->Next();
 	}
         yangila();
 }
@@ -229,50 +229,50 @@ void __fastcall TForm4::tovarklik(TObject* Sender)
 {
     // tovar tanlaganda
     String narxi = ((TButton*)Sender)->Tag;
-    String menyu_id = DataModule3->tekshir(((TButton*)Sender)->HelpKeyword);
-    String stol = DataModule3->tekshir(SpeedButton1->Hint);
-    DataModule3->yordamchi->SQL->Text = "select * from zakaz where stol = '" +
+    String menyu_id = db->tekshir(((TButton*)Sender)->HelpKeyword);
+    String stol = db->tekshir(SpeedButton1->Hint);
+    db->yordamchi->SQL->Text = "select * from zakaz where stol = '" +
                                         stol + "' and menyu_id = '" + menyu_id +
                                         "' && chek = 0";
-    DataModule3->yordamchi->Open();
-    if (DataModule3->yordamchi->RecordCount == 0) {
-        DataModule3->yordamchi->Close();
+    db->yordamchi->Open();
+    if (db->yordamchi->RecordCount == 0) {
+        db->yordamchi->Close();
         int type = 0;
         if (stol == "Dastavka" || stol == "Soboy")
             type = 1;
-        DataModule3->yordamchi->SQL->Text =
+        db->yordamchi->SQL->Text =
             "insert into zakaz(menyu_id,miqdor,narxi,stol,type) values('" +
             menyu_id + "','1','" + narxi + "','" + stol + "','" + type + "')";
-        DataModule3->yordamchi->ExecSQL();
-        DataModule3->ADOQueryzakaz->Active = 0;
-        DataModule3->ADOQueryzakaz->Active = 1;
-        DataModule3->ADOQueryzakaz->Last();
+        db->yordamchi->ExecSQL();
+        db->ADOQueryzakaz->Active = 0;
+        db->ADOQueryzakaz->Active = 1;
+        db->ADOQueryzakaz->Last();
         DBGrid1->SetFocus();
     } else {
-        String id = DataModule3->yordamchi->FieldByName("id")->AsInteger;
-        DataModule3->yordamchi->Close();
-        DataModule3->yordamchi->SQL->Text =
+        String id = db->yordamchi->FieldByName("id")->AsInteger;
+        db->yordamchi->Close();
+        db->yordamchi->SQL->Text =
             " update zakaz set miqdor = miqdor+1 where id = " + id + "";
-        DataModule3->yordamchi->ExecSQL();
-        DataModule3->ADOQueryzakaz->Active = 0;
-        DataModule3->ADOQueryzakaz->Active = 1;
+        db->yordamchi->ExecSQL();
+        db->ADOQueryzakaz->Active = 0;
+        db->ADOQueryzakaz->Active = 1;
         TLocateOptions top;
         top << loPartialKey << loCaseInsensitive;
-        DataModule3->ADOQueryzakaz->Locate("id", id, top);
+        db->ADOQueryzakaz->Locate("id", id, top);
     }
     hisobla();
 }
 void __fastcall TForm4::SpeedButton17Click(TObject* Sender)
 {
-    DataModule3->ADOQueryzakaz->Next();
+    db->ADOQueryzakaz->Next();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm4::SpeedButton16Click(TObject* Sender)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount != 0) {
+    if (db->ADOQueryzakaz->RecordCount != 0) {
         String holat =
-            DataModule3->ADOQueryzakaz->FieldByName("type")->AsString;
+            db->ADOQueryzakaz->FieldByName("type")->AsString;
         if (holat == "0") {
             Form8->ShowModal();
         }
@@ -282,49 +282,49 @@ void __fastcall TForm4::SpeedButton16Click(TObject* Sender)
 
 void __fastcall TForm4::SpeedButton7Click(TObject* Sender)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount != 0) {
-        String id = DataModule3->ADOQueryzakaz->FieldByName("id")->AsInteger;
-        String chek = DataModule3->ADOQueryzakaz->FieldByName("chek")->AsString;
-        DataModule3->yordamchi->Close();
+    if (db->ADOQueryzakaz->RecordCount != 0) {
+        String id = db->ADOQueryzakaz->FieldByName("id")->AsInteger;
+        String chek = db->ADOQueryzakaz->FieldByName("chek")->AsString;
+        db->yordamchi->Close();
         if (chek == "0")
-            DataModule3->yordamchi->SQL->Text =
+            db->yordamchi->SQL->Text =
                 " update zakaz set miqdor = miqdor+1 where id = " + id + "";
         else
-            DataModule3->yordamchi->SQL->Text =
+            db->yordamchi->SQL->Text =
                 "insert into zakaz(menyu_id,miqdor,narxi,stol) select menyu_id,1,narxi,stol from zakaz where id = '" +
                 id + "'";
-        DataModule3->yordamchi->ExecSQL();
-        DataModule3->ADOQueryzakaz->Active = false;
-        DataModule3->ADOQueryzakaz->Active = true;
+        db->yordamchi->ExecSQL();
+        db->ADOQueryzakaz->Active = false;
+        db->ADOQueryzakaz->Active = true;
         hisobla();
 
         //-  LOKATSIYA
         TLocateOptions top;
         top << loPartialKey << loCaseInsensitive;
-        DataModule3->ADOQueryzakaz->Locate("id", id, top);
+        db->ADOQueryzakaz->Locate("id", id, top);
     }
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm4::SpeedButton4Click(TObject* Sender)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount != 0) {
-        String id = DataModule3->ADOQueryzakaz->FieldByName("id")->AsInteger;
-        DataModule3->yordamchi->Close();
-        DataModule3->yordamchi->SQL->Text =
+    if (db->ADOQueryzakaz->RecordCount != 0) {
+        String id = db->ADOQueryzakaz->FieldByName("id")->AsInteger;
+        db->yordamchi->Close();
+        db->yordamchi->SQL->Text =
             " update zakaz set miqdor = miqdor-1 where id = " + id + "";
-        DataModule3->yordamchi->ExecSQL();
-        DataModule3->yordamchi->SQL->Text =
+        db->yordamchi->ExecSQL();
+        db->yordamchi->SQL->Text =
             " delete from zakaz where  miqdor <=0 ";
-        DataModule3->yordamchi->ExecSQL();
-        DataModule3->ADOQueryzakaz->Active = false;
-        DataModule3->ADOQueryzakaz->Active = true;
+        db->yordamchi->ExecSQL();
+        db->ADOQueryzakaz->Active = false;
+        db->ADOQueryzakaz->Active = true;
         hisobla();
 
         //-  LOKATSIYA
         TLocateOptions top;
         top << loPartialKey << loCaseInsensitive;
-        DataModule3->ADOQueryzakaz->Locate("id", id, top);
+        db->ADOQueryzakaz->Locate("id", id, top);
     }
 }
 //---------------------------------------------------------------------------
@@ -332,10 +332,10 @@ void __fastcall TForm4::SpeedButton4Click(TObject* Sender)
 void __fastcall TForm4::SpeedButton5Click(TObject* Sender)
 {
     Form10->Edit1->Text =
-        DataModule3->ADOQueryzakaz->FieldByName("nomi")->AsString;
+        db->ADOQueryzakaz->FieldByName("nomi")->AsString;
     Form10->Edit2->Text =
-        DataModule3->ADOQueryzakaz->FieldByName("miqdor")->AsString;
-    String chek = DataModule3->ADOQueryzakaz->FieldByName("chek")->AsString;
+        db->ADOQueryzakaz->FieldByName("miqdor")->AsString;
+    String chek = db->ADOQueryzakaz->FieldByName("chek")->AsString;
     if (chek != "1")
         Form10->ShowModal();
     else {
@@ -346,19 +346,19 @@ void __fastcall TForm4::SpeedButton5Click(TObject* Sender)
 
 void __fastcall TForm4::SpeedButton6Click(TObject* Sender)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount != 0) {
-        String id = DataModule3->ADOQueryzakaz->FieldByName("id")->AsString;
+    if (db->ADOQueryzakaz->RecordCount != 0) {
+        String id = db->ADOQueryzakaz->FieldByName("id")->AsString;
         switch (MessageDlg("Tanlangan elemetni o'chirishni xohlaysizmi ?",
             mtInformation, mbYesNo, 0))
         {
             case mrYes:
-                DataModule3->yordamchi->Close();
-                DataModule3->yordamchi->SQL->Text =
+                db->yordamchi->Close();
+                db->yordamchi->SQL->Text =
                     " delete from zakaz where id = " + id + "";
 
-                DataModule3->yordamchi->ExecSQL();
-                DataModule3->ADOQueryzakaz->Active = false;
-                DataModule3->ADOQueryzakaz->Active = true;
+                db->yordamchi->ExecSQL();
+                db->ADOQueryzakaz->Active = false;
+                db->ADOQueryzakaz->Active = true;
                 hisobla();
                 break;
         }
@@ -368,7 +368,7 @@ void __fastcall TForm4::SpeedButton6Click(TObject* Sender)
 
 void __fastcall TForm4::Button2Click(TObject* Sender)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount > 0) {
+    if (db->ADOQueryzakaz->RecordCount > 0) {
         hisobla();
         Form2->Label3->Caption = Label2->Caption;
         Form2->Label1->Caption = "Stol\t" + SpeedButton1->Hint;
@@ -403,7 +403,7 @@ void __fastcall TForm4::FormResize(TObject* Sender)
 
 void __fastcall TForm4::Button5Click(TObject* Sender)
 {
-    String stol = DataModule3->tekshir(SpeedButton1->Hint);
+    String stol = db->tekshir(SpeedButton1->Hint);
     //   1
     ADOQuery1->SQL->Text =
         "select * from zakazview where stol = '" + stol + "' and chek = '0' ";
@@ -420,17 +420,17 @@ void __fastcall TForm4::Button5Click(TObject* Sender)
     ADOQuery1->SQL->Text =
         "update zakaz set chek = '1' where stol = '" + stol + "' ";
     ADOQuery1->ExecSQL();
-    DataModule3->ADOQueryzakaz->Active = 0;
-    DataModule3->ADOQueryzakaz->Active = 1;
+    db->ADOQueryzakaz->Active = 0;
+    db->ADOQueryzakaz->Active = 1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm4::Button3Click(TObject* Sender)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount == 0) {
+    if (db->ADOQueryzakaz->RecordCount == 0) {
         return;
     }
-    String stol = DataModule3->tekshir(SpeedButton1->Hint);
+    String stol = db->tekshir(SpeedButton1->Hint);
     ADOQuery1->SQL->Text =
         "select * from zakazview where type=0 and stol = '" + stol + "'";
     ADOQuery1->Open();
@@ -456,8 +456,8 @@ void __fastcall TForm4::ScrollBox1MouseWheel(TObject* Sender, TShiftState Shift,
 void __fastcall TForm4::DBGrid1DrawColumnCell(TObject* Sender,
     const TRect &Rect, int DataCol, TColumn* Column, TGridDrawState State)
 {
-    if (DataModule3->ADOQueryzakaz->RecordCount > 0) {
-        if (DataModule3->ADOQueryzakaz->FieldByName("type")->AsInteger == 0) {
+    if (db->ADOQueryzakaz->RecordCount > 0) {
+        if (db->ADOQueryzakaz->FieldByName("type")->AsInteger == 0) {
             //	DBGrid1->Canvas->Brush->Color=clWhite;
         } else {
             DBGrid1->Canvas->Brush->Color = clBtnFace;

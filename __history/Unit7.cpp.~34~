@@ -26,9 +26,9 @@ TForm7 *Form7;
 __fastcall TForm7::TForm7(TComponent* Owner)
 	: TForm(Owner)
 {
-//  for (int i = 0; i < DataModule3->ADOQism->RecordCount; i++) {
-////	   Form7->DBGrid9->Columns->operator [](1)->PickList->Add(DataModule3->ADOQism->FieldByName("nomi")->AsString);
-//	   DataModule3->ADOQism->Next();
+//  for (int i = 0; i < db->ADOQism->RecordCount; i++) {
+////	   Form7->DBGrid9->Columns->operator [](1)->PickList->Add(db->ADOQism->FieldByName("nomi")->AsString);
+//	   db->ADOQism->Next();
 //  }
 
 }
@@ -74,9 +74,9 @@ void __fastcall TForm7::DashboardButtonClick(TObject *Sender)
 
 void __fastcall TForm7::SearchBox1Change(TObject *Sender)
 {
-	String nomi = DataModule3->tekshir(SearchBox1->Text.Trim());
-	DataModule3->ADOQuerymenyu->SQL->Text = "select * from menyuview where nomi like '%"+nomi+"%' ";
-	DataModule3->ADOQuerymenyu->Open();
+	String nomi = db->tekshir(SearchBox1->Text.Trim());
+	db->ADOQuerymenyu->SQL->Text = "select * from menyuview where nomi like '%"+nomi+"%' ";
+	db->ADOQuerymenyu->Open();
 }
 //---------------------------------------------------------------------------
 
@@ -93,10 +93,10 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
 
 void __fastcall TForm7::Button2Click(TObject *Sender)
 {
-	if(DataModule3->ADOQuerymenyu->RecordCount > 0){
-		Form12->Edit1->Text = DataModule3->ADOQuerymenyu->FieldByName("nomi")->AsString;
-		Form12->Edit2->Text = DataModule3->ADOQuerymenyu->FieldByName("narxi")->AsString;
-		Form12->Edit1->Text = DataModule3->ADOQuerymenyu->FieldByName("birlik")->AsString;
+	if(db->ADOQuerymenyu->RecordCount > 0){
+		Form12->Edit1->Text = db->ADOQuerymenyu->FieldByName("nomi")->AsString;
+		Form12->Edit2->Text = db->ADOQuerymenyu->FieldByName("narxi")->AsString;
+		Form12->Edit1->Text = db->ADOQuerymenyu->FieldByName("birlik")->AsString;
 		Form12->Caption = "";
 		Form12->ShowModal();
 	}
@@ -105,16 +105,16 @@ void __fastcall TForm7::Button2Click(TObject *Sender)
 
 void __fastcall TForm7::Button3Click(TObject *Sender)
 {
-	if(DataModule3->ADOQuerymenyu->RecordCount != 0){
-		String id = DataModule3->ADOQuerymenyu->FieldByName("id")->AsString;
-		String nomi = DataModule3->ADOQuerymenyu->FieldByName("nomi")->AsString;
+	if(db->ADOQuerymenyu->RecordCount != 0){
+		String id = db->ADOQuerymenyu->FieldByName("id")->AsString;
+		String nomi = db->ADOQuerymenyu->FieldByName("nomi")->AsString;
 		switch(MessageDlg(nomi + " ni o'chirasizmi ?",mtWarning,mbYesNo,1)){
 			  case mrYes :
-					  DataModule3->yordamchi->Close();
-					  DataModule3->yordamchi->SQL->Text = "delete from menyu where id = '"+id+"'";
-					  DataModule3->yordamchi->ExecSQL();
-					  DataModule3->ADOQuerymenyu->Active = false;
-					  DataModule3->ADOQuerymenyu->Active = true;
+					  db->yordamchi->Close();
+					  db->yordamchi->SQL->Text = "delete from menyu where id = '"+id+"'";
+					  db->yordamchi->ExecSQL();
+					  db->ADOQuerymenyu->Active = false;
+					  db->ADOQuerymenyu->Active = true;
 				break;
 		}
 	}
@@ -129,24 +129,24 @@ void __fastcall TForm7::UsersButtonClick(TObject *Sender)
 
 void __fastcall TForm7::SearchBox2Change(TObject *Sender)
 {
-	String nomi = DataModule3->tekshir(SearchBox2->Text.Trim());
-	DataModule3->ADOQueryxodimlar->SQL->Text = "select * from xodimlar where fish like '%"+nomi+"%'  or telefon like '%"+nomi+"%'";
-	DataModule3->ADOQueryxodimlar->Open();
+	String nomi = db->tekshir(SearchBox2->Text.Trim());
+	db->ADOQueryxodimlar->SQL->Text = "select * from xodimlar where fish like '%"+nomi+"%'  or telefon like '%"+nomi+"%'";
+	db->ADOQueryxodimlar->Open();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::Button6Click(TObject *Sender)
 {
-	if(DataModule3->ADOQueryxodimlar->RecordCount != 0){
-		String id = DataModule3->ADOQueryxodimlar->FieldByName("id")->AsString;
-		String nomi = DataModule3->ADOQueryxodimlar->FieldByName("fish")->AsString;
+	if(db->ADOQueryxodimlar->RecordCount != 0){
+		String id = db->ADOQueryxodimlar->FieldByName("id")->AsString;
+		String nomi = db->ADOQueryxodimlar->FieldByName("fish")->AsString;
 		switch(MessageDlg(nomi + " ni o'chirasizmi ?",mtWarning,mbYesNo,1)){
 			  case mrYes :
-					  DataModule3->yordamchi->Close();
-					  DataModule3->yordamchi->SQL->Text = "delete from xodimlar where id = '"+id+"'";
-					  DataModule3->yordamchi->ExecSQL();
-					  DataModule3->ADOQueryxodimlar->Active = false;
-					  DataModule3->ADOQueryxodimlar->Active = true;
+					  db->yordamchi->Close();
+					  db->yordamchi->SQL->Text = "delete from xodimlar where id = '"+id+"'";
+					  db->yordamchi->ExecSQL();
+					  db->ADOQueryxodimlar->Active = false;
+					  db->ADOQueryxodimlar->Active = true;
 				break;
 		}
 	}
@@ -155,15 +155,15 @@ void __fastcall TForm7::Button6Click(TObject *Sender)
 
 void __fastcall TForm7::Button4Click(TObject *Sender)
 {
-	DataModule3->ADOQueryxodimlar-> Insert();
+	db->ADOQueryxodimlar-> Insert();
 	frmombor->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::Button5Click(TObject *Sender)
 {
-	if(DataModule3->ADOQueryxodimlar->RecordCount > 0){
-		DataModule3->ADOQueryxodimlar->Edit();
+	if(db->ADOQueryxodimlar->RecordCount > 0){
+		db->ADOQueryxodimlar->Edit();
 		frmombor->ShowModal();
 	}
 }
@@ -207,15 +207,15 @@ void __fastcall TForm7::MarketingButtonClick(TObject *Sender)
 
 void __fastcall TForm7::SearchBox3Change(TObject *Sender)
 {
-	DataModule3->ADOQuerymenyu->SQL->Text = "select * from menyu where nomi like '%"+DataModule3->tekshir(SearchBox2->Text.Trim())+"%' ";
-	DataModule3->ADOQuerymenyu->Open() ;
+	db->ADOQuerymenyu->SQL->Text = "select * from menyu where nomi like '%"+db->tekshir(SearchBox2->Text.Trim())+"%' ";
+	db->ADOQuerymenyu->Open() ;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::DBGrid7CellClick(TColumn *Column)
 {
-	  DataModule3->ADOtarkib->SQL->Text = "select * from tarkibview where menyuid = '"+DataModule3->ADOQuerymenyu->FieldByName("id")->AsString+"'";
-	DataModule3->ADOtarkib->Open();
+	  db->ADOtarkib->SQL->Text = "select * from tarkibview where menyuid = '"+db->ADOQuerymenyu->FieldByName("id")->AsString+"'";
+	db->ADOtarkib->Open();
 }
 //---------------------------------------------------------------------------
 
@@ -227,8 +227,8 @@ void __fastcall TForm7::Button18Click(TObject *Sender)
 
 void __fastcall TForm7::Button19Click(TObject *Sender)
 {
-	DataModule3->ADOtarkib->SQL->Text = "select * from tarkibview where menyuid = '"+DataModule3->ADOQuerymenyu->FieldByName("id")->AsString+"'";
-	DataModule3->ADOtarkib->Open();
+	db->ADOtarkib->SQL->Text = "select * from tarkibview where menyuid = '"+db->ADOQuerymenyu->FieldByName("id")->AsString+"'";
+	db->ADOtarkib->Open();
 	Form13->ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -249,71 +249,71 @@ void __fastcall TForm7::Button20Click(TObject *Sender)
 
 void __fastcall TForm7::Button24Click(TObject *Sender)
 {
-	  DataModule3->ADOprixod->First();
-	 for (int i = 0; i < DataModule3->ADOprixod->RecordCount; i++) {
-			String s = DataModule3->tekshir(DataModule3->ADOprixod->FieldByName("nomi")->AsString.Trim());
-			String m =  DataModule3->doublega(DataModule3->ADOprixod->FieldByName("miqdori")->AsString.Trim());
-			String n = DataModule3->tekshir(DataModule3->ADOprixod->FieldByName("narxi")->AsString.Trim());
+	  db->ADOprixod->First();
+	 for (int i = 0; i < db->ADOprixod->RecordCount; i++) {
+			String s = db->tekshir(db->ADOprixod->FieldByName("nomi")->AsString.Trim());
+			String m =  db->doublega(db->ADOprixod->FieldByName("miqdori")->AsString.Trim());
+			String n = db->tekshir(db->ADOprixod->FieldByName("narxi")->AsString.Trim());
 			if(s=="" || n=="" || m=="")
 				  return ShowMessage("Bo'sh qatorni to'ldiring");
-			DataModule3->yordamchi->SQL->Text = " select * from qism where nomi = '"+s+"'";
-			DataModule3->yordamchi->Open();
-			if(DataModule3->yordamchi->RecordCount == 0){
+			db->yordamchi->SQL->Text = " select * from qism where nomi = '"+s+"'";
+			db->yordamchi->Open();
+			if(db->yordamchi->RecordCount == 0){
 				switch (MessageDlg(s + "bazada mavjud emas,bazaga qo'shasizmi",mtWarning,mbYesNo,1)) {
-					case mrNo :  DataModule3->ADOprixod->FieldByName("nomi")->AsString==""; break;
+					case mrNo :  db->ADOprixod->FieldByName("nomi")->AsString==""; break;
 				}
 				return;
 			}
-			DataModule3->ADOprixod->Next();
-	 }      DataModule3->yordamchi->Close();
-	 DataModule3->ADOprixod->First();
-	 for (int i = 0; i < DataModule3->ADOprixod->RecordCount; i++) {
-			String s = DataModule3->tekshir(DataModule3->ADOprixod->FieldByName("nomi")->AsString.Trim());
-			String m =  DataModule3->doublega(DataModule3->ADOprixod->FieldByName("miqdori")->AsString.Trim());
-			String n = DataModule3->tekshir(DataModule3->ADOprixod->FieldByName("narxi")->AsString.Trim());
-			DataModule3->yordamchi->SQL->Text = "update qism set miqdori = miqdori+'"+m+"' , narxi = '"+n+"' where nomi = '"+s+"' ";
-			DataModule3->yordamchi->ExecSQL();
-			DataModule3->yordamchi->SQL->Text = "insert into qismkirim(nomi,miqdori,narxi,vaqt) values('"+s+"','"+m+"','"+n+"',sysdate())";
-			DataModule3->yordamchi->ExecSQL();
-			DataModule3->ADOprixod->Next();
+			db->ADOprixod->Next();
+	 }      db->yordamchi->Close();
+	 db->ADOprixod->First();
+	 for (int i = 0; i < db->ADOprixod->RecordCount; i++) {
+			String s = db->tekshir(db->ADOprixod->FieldByName("nomi")->AsString.Trim());
+			String m =  db->doublega(db->ADOprixod->FieldByName("miqdori")->AsString.Trim());
+			String n = db->tekshir(db->ADOprixod->FieldByName("narxi")->AsString.Trim());
+			db->yordamchi->SQL->Text = "update qism set miqdori = miqdori+'"+m+"' , narxi = '"+n+"' where nomi = '"+s+"' ";
+			db->yordamchi->ExecSQL();
+			db->yordamchi->SQL->Text = "insert into qismkirim(nomi,miqdori,narxi,vaqt) values('"+s+"','"+m+"','"+n+"',sysdate())";
+			db->yordamchi->ExecSQL();
+			db->ADOprixod->Next();
 	 }
 	 Button23->Click();
 	 ShowMessage("Tayyor");
-	 DataModule3->ADOQismkirim->Active = 0;
-	 DataModule3->ADOQismkirim->Active = 1;
-	 DataModule3->ADOQism->Active = 0;
-	 DataModule3->ADOQism->Active = 1;
+	 db->ADOQismkirim->Active = 0;
+	 db->ADOQismkirim->Active = 1;
+	 db->ADOQism->Active = 0;
+	 db->ADOQism->Active = 1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::Button23Click(TObject *Sender)
 {
-	   DataModule3->yordamchi->Close()   ;
-   DataModule3->yordamchi->SQL->Text = " delete  from prixod where id > 0 ";
-	DataModule3->yordamchi->ExecSQL();
-	DataModule3->ADOprixod->Active= 0;
-	DataModule3->ADOprixod->Active= 1;
+	   db->yordamchi->Close()   ;
+   db->yordamchi->SQL->Text = " delete  from prixod where id > 0 ";
+	db->yordamchi->ExecSQL();
+	db->ADOprixod->Active= 0;
+	db->ADOprixod->Active= 1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::Button17Click(TObject *Sender)
 {
-	DataModule3->ADOQism->Insert();
+	db->ADOQism->Insert();
 	Form11->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::Button22Click(TObject *Sender)
 {
-	DataModule3->ADOQism->Edit();
+	db->ADOQism->Edit();
 	Form11->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm7::SearchBox4Change(TObject *Sender)
 {
-		DataModule3->ADOQism->SQL->Text = "select * from qism where nomi like '%"+DataModule3->tekshir(SearchBox4->Text.Trim())+"%' ";
-	DataModule3->ADOQism->Open() ;
+		db->ADOQism->SQL->Text = "select * from qism where nomi like '%"+db->tekshir(SearchBox4->Text.Trim())+"%' ";
+	db->ADOQism->Open() ;
 }
 //---------------------------------------------------------------------------
 
@@ -325,9 +325,9 @@ void __fastcall TForm7::Button25Click(TObject *Sender)
 
 void __fastcall TForm7::Button26Click(TObject *Sender)
 {
-	 DataModule3->yordamchi->Close();
-	 DataModule3->yordamchi->SQL->Text = "update maxsus set qiymati = '"+DBEdit1->Text+"'";
-	 DataModule3->yordamchi->ExecSQL();
+	 db->yordamchi->Close();
+	 db->yordamchi->SQL->Text = "update maxsus set qiymati = '"+DBEdit1->Text+"'";
+	 db->yordamchi->ExecSQL();
 }
 //---------------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-object DataModule3: TDataModule3
+object db: Tdb
   Height = 496
   Width = 1076
   PixelsPerInch = 96

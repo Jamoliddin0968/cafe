@@ -26,7 +26,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
 
 void __fastcall TForm5::Button2Click(TObject *Sender)
 {
-	  String nomi = DataModule3->tekshir(ComboBox1->Text);
+	  String nomi = db->tekshir(ComboBox1->Text);
 	  if(nomi == "")
 		return ShowMessage("Nomini tanlang");
 	  if(Edit1->Text == "")
@@ -34,19 +34,19 @@ void __fastcall TForm5::Button2Click(TObject *Sender)
 	  double miqdori = Edit1->Text.ToDouble();
 	  if(miqdori == 0)
 		  return ShowMessage("Miqdorini kiriting");
-	  DataModule3->yordamchi->SQL->Text = "select * from qism where nomi = '"+nomi+"'";
-	  DataModule3->yordamchi->Open() ;
-	  String id = DataModule3->yordamchi->FieldByName("id")->AsString;
-	 // String birlik = DataModule3->tekshir(DataModule3->yordamchi->FieldByName("id")->AsString);
-	  DataModule3->yordamchi->Close();
+	  db->yordamchi->SQL->Text = "select * from qism where nomi = '"+nomi+"'";
+	  db->yordamchi->Open() ;
+	  String id = db->yordamchi->FieldByName("id")->AsString;
+	 // String birlik = db->tekshir(db->yordamchi->FieldByName("id")->AsString);
+	  db->yordamchi->Close();
 	  if(Caption == "Add")
-		DataModule3->yordamchi->SQL->Text = "insert into tarkib(menyuid,qismid,miqdori) values('"+DataModule3->ADOQuerymenyu->FieldByName("id")->AsString+"','"+id+"','"+DataModule3->doublega(FloatToStr(miqdori))+"')";
+		db->yordamchi->SQL->Text = "insert into tarkib(menyuid,qismid,miqdori) values('"+db->ADOQuerymenyu->FieldByName("id")->AsString+"','"+id+"','"+db->doublega(FloatToStr(miqdori))+"')";
 	  else
-		DataModule3->yordamchi->SQL->Text = "update tarkib set qismid = '"+id+"',miqdori = '"+DataModule3->doublega(FloatToStr(miqdori))+"' where id= '"+DataModule3->ADOtarkib->FieldByName("id")->AsString+"'";
-	  DataModule3->yordamchi->ExecSQL();
-	  DataModule3->ADOtarkib->Active = 0;
+		db->yordamchi->SQL->Text = "update tarkib set qismid = '"+id+"',miqdori = '"+db->doublega(FloatToStr(miqdori))+"' where id= '"+db->ADOtarkib->FieldByName("id")->AsString+"'";
+	  db->yordamchi->ExecSQL();
+	  db->ADOtarkib->Active = 0;
 	  ShowMessage("Tayyor");
-	  DataModule3->ADOtarkib->Active = 1;
+	  db->ADOtarkib->Active = 1;
       Button1->Click();
 }
 //---------------------------------------------------------------------------
@@ -54,12 +54,12 @@ void __fastcall TForm5::Button2Click(TObject *Sender)
 void __fastcall TForm5::FormActivate(TObject *Sender)
 {
     ComboBox1->Clear();
-	DataModule3->yordamchi->SQL->Text = "select * from qism";
-	DataModule3->yordamchi->Open();
-	DataModule3->yordamchi->First();
-	for (int i = 0; i < DataModule3->yordamchi->RecordCount; i++) {
-		 ComboBox1->Items->Add(DataModule3->yordamchi->FieldByName("nomi")->AsString);
-		 DataModule3->yordamchi->Next();
+	db->yordamchi->SQL->Text = "select * from qism";
+	db->yordamchi->Open();
+	db->yordamchi->First();
+	for (int i = 0; i < db->yordamchi->RecordCount; i++) {
+		 ComboBox1->Items->Add(db->yordamchi->FieldByName("nomi")->AsString);
+		 db->yordamchi->Next();
 	}
 }
 //---------------------------------------------------------------------------

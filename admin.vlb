@@ -197,9 +197,9 @@ Coordinates=1053,658,71,36
 [DBNavigator2]
 Coordinates=60,944,94,58
 
-[DataModule3.]
+[db.]
 Coordinates=10,366,201,80
 
-[DataModule3.login]
+[db.login]
 Visible=False
 

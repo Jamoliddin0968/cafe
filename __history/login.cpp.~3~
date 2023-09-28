@@ -23,17 +23,17 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner) {}
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SpeedButton4Click(TObject* Sender)
 {
-    DataModule3->login->SQL->Text = " select * from xodimlar where parol = '" +
+    db->login->SQL->Text = " select * from xodimlar where parol = '" +
                                     LabeledEdit2->Text.Trim() + "' ";
-    DataModule3->login->Open();
-    if (DataModule3->login->RecordCount != 0) {
+    db->login->Open();
+    if (db->login->RecordCount != 0) {
         String huquq =
-            DataModule3->login->FieldByName("huquq")->AsString.Trim();
+            db->login->FieldByName("huquq")->AsString.Trim();
         if (huquq.LowerCase() == "admin")
             Form7->ShowModal();
         else if (huquq == "ofitsiant" || huquq == "Ofitsiant") {
             Form4->Label8->Caption =
-                DataModule3->login->FieldByName("fish")->AsString;
+                db->login->FieldByName("fish")->AsString;
             Form4->ShowModal();
         }
     }

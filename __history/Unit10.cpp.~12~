@@ -56,17 +56,17 @@ void __fastcall TForm10::FormActivate(TObject *Sender)
 void __fastcall TForm10::Edit2KeyPress(TObject *Sender, System::WideChar &Key)
 {
 	   if(Key==13){
-			if(DataModule3->ADOQueryzakaz->RecordCount!=0){
-				String id = DataModule3->ADOQueryzakaz->FieldByName("id")->AsString;
-				String holat = DataModule3->ADOQueryzakaz->FieldByName("holat")->AsString;
-				DataModule3->yordamchi->Close();
+			if(db->ADOQueryzakaz->RecordCount!=0){
+				String id = db->ADOQueryzakaz->FieldByName("id")->AsString;
+				String holat = db->ADOQueryzakaz->FieldByName("holat")->AsString;
+				db->yordamchi->Close();
 				if (holat=="1")
-					 DataModule3->yordamchi->SQL->Text = " update zakaz set miqdor = '"+Edit2->Text+"' where id = "+id+"" ;
+					 db->yordamchi->SQL->Text = " update zakaz set miqdor = '"+Edit2->Text+"' where id = "+id+"" ;
 				else
-					DataModule3->yordamchi->SQL->Text = " update soboy set miqdor = '"+Edit2->Text+"' where id = "+id+"" ;
-				DataModule3->yordamchi->ExecSQL();
-				DataModule3->ADOQueryzakaz->Active = false;
-				DataModule3->ADOQueryzakaz->Active = true;
+					db->yordamchi->SQL->Text = " update soboy set miqdor = '"+Edit2->Text+"' where id = "+id+"" ;
+				db->yordamchi->ExecSQL();
+				db->ADOQueryzakaz->Active = false;
+				db->ADOQueryzakaz->Active = true;
 				Form4->hisobla();
 				Close();
 			}

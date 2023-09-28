@@ -20,7 +20,7 @@ object Form13: TForm13
     Width = 859
     Height = 481
     Align = alClient
-    DataSource = DataModule3.dstarkib
+    DataSource = db.dstarkib
     DrawingStyle = gdsGradient
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
@@ -82,7 +82,7 @@ object Form13: TForm13
       Height = 22
       AutoSize = True
       DataField = 'nomi'
-      DataSource = DataModule3.DataSourcemenyu
+      DataSource = db.DataSourcemenyu
     end
   end
   object GridPanel1: TGridPanel

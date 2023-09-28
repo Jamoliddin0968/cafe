@@ -19,13 +19,13 @@ __fastcall TForm11::TForm11(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm11::Button2Click(TObject *Sender)
 {
-	  DataModule3->ADOQism->Cancel();
+	  db->ADOQism->Cancel();
 	  Close();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm11::Button1Click(TObject *Sender)
 {
-      DataModule3->ADOQism->Post();
+      db->ADOQism->Post();
 	  Close();
 }
 //---------------------------------------------------------------------------

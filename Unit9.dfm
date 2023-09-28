@@ -63,7 +63,7 @@ object frmombor: Tfrmombor
     Width = 297
     Height = 30
     DataField = 'fish'
-    DataSource = DataModule3.DataSourcexodimlar
+    DataSource = db.DataSourcexodimlar
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
@@ -72,7 +72,7 @@ object frmombor: Tfrmombor
     Width = 297
     Height = 30
     DataField = 'Lavozim'
-    DataSource = DataModule3.DataSourcexodimlar
+    DataSource = db.DataSourcexodimlar
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
@@ -81,7 +81,7 @@ object frmombor: Tfrmombor
     Width = 297
     Height = 30
     DataField = 'manzil'
-    DataSource = DataModule3.DataSourcexodimlar
+    DataSource = db.DataSourcexodimlar
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
@@ -90,7 +90,7 @@ object frmombor: Tfrmombor
     Width = 297
     Height = 30
     DataField = 'telefon'
-    DataSource = DataModule3.DataSourcexodimlar
+    DataSource = db.DataSourcexodimlar
     TabOrder = 3
   end
   object DBEdit5: TDBEdit
@@ -99,7 +99,7 @@ object frmombor: Tfrmombor
     Width = 297
     Height = 30
     DataField = 'parol'
-    DataSource = DataModule3.DataSourcexodimlar
+    DataSource = db.DataSourcexodimlar
     TabOrder = 4
   end
   object ComboBox1: TDBComboBox
@@ -108,7 +108,7 @@ object frmombor: Tfrmombor
     Width = 297
     Height = 30
     DataField = 'huquq'
-    DataSource = DataModule3.DataSourcexodimlar
+    DataSource = db.DataSourcexodimlar
     Items.Strings = (
       'admin'
       'ofitsiant'

@@ -1,89 +1,89 @@
-﻿[DataModule3.DataSourceombor]
+﻿[db.DataSourceombor]
 Coordinates=897,496,170,33
 
-[DataModule3.ADOkassa]
+[db.ADOkassa]
 Coordinates=10,432,132,123
 
-[DataModule3.ADOQueryzakaz]
+[db.ADOQueryzakaz]
 Coordinates=420,10,161,177
 
-[DataModule3.ADOtarkib]
+[db.ADOtarkib]
 Coordinates=199,254,132,141
 
-[DataModule3.dsqkirim]
+[db.dsqkirim]
 Coordinates=242,438,124,33
 
-[DataModule3.DataSourcestol]
+[db.DataSourcestol]
 Coordinates=446,504,156,33
 
-[DataModule3.ADOQueryxodimlar]
+[db.ADOQueryxodimlar]
 Coordinates=204,10,176,177
 
-[DataModule3.ADOQuerykirim]
+[db.ADOQuerykirim]
 Coordinates=10,10,158,195
 
-[DataModule3.ADOQismkirim]
+[db.ADOQismkirim]
 Coordinates=10,254,154,141
 
-[DataModule3.ADOQueryKategoriya]
+[db.ADOQueryKategoriya]
 Coordinates=1000,452,187,33
 Visible=False
 
-[DataModule3.DataSourceKategoriya]
+[db.DataSourceKategoriya]
 Coordinates=635,188,191,33
 
-[DataModule3.DataSourcemenyu]
+[db.DataSourcemenyu]
 Coordinates=171,1,171,33
 
-[DataModule3.ADOprixod]
+[db.ADOprixod]
 Coordinates=620,10,135,159
 
-[DataModule3.ADOQuerystol]
+[db.ADOQuerystol]
 Coordinates=387,432,152,87
 
-[DataModule3.ADOQuerymenyu]
+[db.ADOQuerymenyu]
 Coordinates=525,254,167,141
 
-[DataModule3.ADOQism]
+[db.ADOQism]
 Coordinates=363,254,129,141
 
-[DataModule3.Dsqism]
+[db.Dsqism]
 Coordinates=897,694,118,33
 
-[DataModule3.ADOQuerymaxsus]
+[db.ADOQuerymaxsus]
 Coordinates=176,432,172,105
 
-[DataModule3.DataSourcekassa]
+[db.DataSourcekassa]
 Coordinates=1154,78,167,33
 
-[DataModule3.Dsprixod]
+[db.Dsprixod]
 Coordinates=42,187,125,33
 
-[DataModule3.dsqoldiq]
+[db.dsqoldiq]
 Coordinates=274,644,124,33
 
-[DataModule3.ADOQuerysotilgan]
+[db.ADOQuerysotilgan]
 Coordinates=787,10,173,159
 
-[DataModule3.DataSourcesotilgan]
+[db.DataSourcesotilgan]
 Coordinates=897,287,178,33
 
-[DataModule3.ADOqoldiq]
+[db.ADOqoldiq]
 Coordinates=730,254,135,141
 
-[DataModule3.yordamchi]
+[db.yordamchi]
 Coordinates=750,550,133,51
 
-[DataModule3.DataSourcekirim]
+[db.DataSourcekirim]
 Coordinates=391,232,163,33
 
-[DataModule3.DataSourcezakaz]
+[db.DataSourcezakaz]
 Coordinates=248,853,166,33
 
-[DataModule3.dstarkib]
+[db.dstarkib]
 Coordinates=616,644,121,33
 
-[DataModule3.DataSourcexodimlar]
+[db.DataSourcexodimlar]
 Coordinates=447,853,181,33
 
 []

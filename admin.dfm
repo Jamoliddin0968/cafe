@@ -42,7 +42,7 @@ object Form7: TForm7
         Width = 1149
         Height = 597
         Align = alClient
-        DataSource = DataModule3.DataSourcemenyu
+        DataSource = db.DataSourcemenyu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -367,7 +367,7 @@ object Form7: TForm7
         Width = 1149
         Height = 597
         Align = alClient
-        DataSource = DataModule3.DataSourcexodimlar
+        DataSource = db.DataSourcexodimlar
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -494,7 +494,7 @@ object Form7: TForm7
         Width = 1149
         Height = 693
         Align = alClient
-        DataSource = DataModule3.DataSourcekirim
+        DataSource = db.DataSourcekirim
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -19
@@ -617,7 +617,7 @@ object Form7: TForm7
         Width = 1149
         Height = 693
         Align = alClient
-        DataSource = DataModule3.DataSourcesotilgan
+        DataSource = db.DataSourcesotilgan
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -940,7 +940,7 @@ object Form7: TForm7
         Width = 1149
         Height = 640
         Align = alClient
-        DataSource = DataModule3.DataSourcekassa
+        DataSource = db.DataSourcekassa
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -1052,7 +1052,7 @@ object Form7: TForm7
         Width = 829
         Height = 660
         Align = alClient
-        DataSource = DataModule3.dstarkib
+        DataSource = db.dstarkib
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -1131,7 +1131,7 @@ object Form7: TForm7
         Width = 320
         Height = 660
         Align = alLeft
-        DataSource = DataModule3.DataSourcemenyu
+        DataSource = db.DataSourcemenyu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -29
@@ -1214,7 +1214,7 @@ object Form7: TForm7
             Width = 1141
             Height = 537
             Align = alClient
-            DataSource = DataModule3.Dsqism
+            DataSource = db.Dsqism
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clWindowText
             Font.Height = -16
@@ -1408,14 +1408,13 @@ object Form7: TForm7
         Align = alLeft
         Caption = #1050#1072#1090#1077#1075#1086#1088#1080#1103#1083#1072#1088
         TabOrder = 0
-        ExplicitHeight = 582
         object DBGrid10: TDBGrid
           Left = 2
           Top = 120
           Width = 552
           Height = 565
           Align = alClient
-          DataSource = DataModule3.DataSourceKategoriya
+          DataSource = db.DataSourceKategoriya
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
           Font.Height = -24
@@ -1454,7 +1453,7 @@ object Form7: TForm7
           Width = 546
           Height = 70
           Margins.Top = 15
-          DataSource = DataModule3.DataSourceKategoriya
+          DataSource = db.DataSourceKategoriya
           VisibleButtons = [nbInsert, nbDelete, nbPost]
           Align = alTop
           TabOrder = 1
@@ -1469,14 +1468,13 @@ object Form7: TForm7
         Align = alClient
         Caption = #1057#1090#1086#1083#1083#1072#1088
         TabOrder = 1
-        ExplicitHeight = 582
         object DBGrid11: TDBGrid
           Left = 2
           Top = 120
           Width = 577
           Height = 565
           Align = alClient
-          DataSource = DataModule3.DataSourcestol
+          DataSource = db.DataSourcestol
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
           Font.Height = -24
@@ -1529,7 +1527,7 @@ object Form7: TForm7
           Width = 571
           Height = 70
           Margins.Top = 15
-          DataSource = DataModule3.DataSourcestol
+          DataSource = db.DataSourcestol
           VisibleButtons = [nbInsert, nbDelete, nbPost]
           Align = alTop
           TabOrder = 1
@@ -1548,7 +1546,6 @@ object Form7: TForm7
     Placement = svpLeft
     TabOrder = 1
     StyleName = 'Windows10 SlateGray'
-    OnClosing = SplitViewClosing
     OnOpening = SplitViewOpening
     object pnlToolbar: TPanel
       Left = 0

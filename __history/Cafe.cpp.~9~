@@ -8,7 +8,7 @@
 #include <Vcl.Themes.hpp>
 USEFORM("Unit5.cpp", Form5);
 USEFORM("Unit4.cpp", Form4);
-USEFORM("baza.cpp", DataModule3); /* TDataModule: File Type */
+USEFORM("baza.cpp", db); /* TDataModule: File Type */
 USEFORM("Unit2.cpp", Form2);
 USEFORM("Unit9.cpp", frmombor);
 USEFORM("Unit8.cpp", Form8);
@@ -31,7 +31,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->Title = "Oshxona";
 		Application->CreateForm(__classid(TForm1), &Form1);
 		Application->CreateForm(__classid(TForm2), &Form2);
-		Application->CreateForm(__classid(TDataModule3), &DataModule3);
+		Application->CreateForm(__classid(Tdb), &db);
 		Application->CreateForm(__classid(TForm4), &Form4);
 		Application->CreateForm(__classid(TDM), &DM);
 		Application->CreateForm(__classid(TForm8), &Form8);

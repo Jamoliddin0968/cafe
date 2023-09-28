@@ -202,7 +202,7 @@ object Form8: TForm8
           Height = 39
           Align = alClient
           DataField = 'nomi'
-          DataSource = DataModule3.DataSourcezakaz
+          DataSource = db.DataSourcezakaz
           ReadOnly = True
           TabOrder = 1
           ExplicitHeight = 40
@@ -215,7 +215,7 @@ object Form8: TForm8
           Height = 39
           Align = alClient
           DataField = 'miqdor'
-          DataSource = DataModule3.DataSourcezakaz
+          DataSource = db.DataSourcezakaz
           TabOrder = 2
           ExplicitHeight = 40
         end

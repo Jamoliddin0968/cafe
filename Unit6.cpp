@@ -40,11 +40,11 @@ void __fastcall TDM::FormActivate(TObject *Sender)
 void __fastcall TDM::Button1Click(TObject *Sender)
 {
 	 if(Edit1->Text != "" && Edit2->Text != "") {
-		 DataModule3->yordamchi->Close();
-		 DataModule3->yordamchi->SQL->Text = "insert into kassa(vaqt,izoh,summa) values(sysdate(),'"+DataModule3->tekshir(Edit1->Text)+"','"+Edit2->Text+"') " ;
-		 DataModule3->yordamchi->ExecSQL() ;
-		 DataModule3->ADOkassa->Active = 0;
-		 DataModule3->ADOkassa->Active = 1;
+		 db->yordamchi->Close();
+		 db->yordamchi->SQL->Text = "insert into kassa(vaqt,izoh,summa) values(sysdate(),'"+db->tekshir(Edit1->Text)+"','"+Edit2->Text+"') " ;
+		 db->yordamchi->ExecSQL() ;
+		 db->ADOkassa->Active = 0;
+		 db->ADOkassa->Active = 1;
          ShowMessage("Tayyor");
 		 Close();
 	 }

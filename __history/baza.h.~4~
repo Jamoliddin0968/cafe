@@ -10,7 +10,7 @@
 #include "frxDBSet.hpp"
 #include "frxTableObject.hpp"
 //---------------------------------------------------------------------------
-class TDataModule3 : public TDataModule
+class Tdb : public TDataModule
 {
 __published:	// IDE-managed Components
 	TADOConnection *ADOConnection1;
@@ -70,11 +70,11 @@ __published:	// IDE-managed Components
 
 private:	// User declarations
 public:		// User declarations
-	__fastcall TDataModule3(TComponent* Owner);
+	__fastcall Tdb(TComponent* Owner);
 	String tekshir(String qiymat);
 	String doublega(String son);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TDataModule3 *DataModule3;
+extern PACKAGE Tdb *db;
 //---------------------------------------------------------------------------
 #endif
