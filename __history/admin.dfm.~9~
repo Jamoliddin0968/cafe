@@ -20,7 +20,7 @@ object Form7: TForm7
     Width = 1151
     Height = 695
     Align = alClient
-    ActiveCard = Card8
+    ActiveCard = Card5
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -710,7 +710,7 @@ object Form7: TForm7
       Top = 1
       Width = 1149
       Height = 693
-      Caption = 'Card5'
+      Caption = 'Hisobotlar'
       CardIndex = 4
       TabOrder = 4
       object Panel1: TPanel
@@ -782,9 +782,9 @@ object Form7: TForm7
         object SpeedButton2: TSpeedButton
           AlignWithMargins = True
           Left = 2
-          Top = 392
+          Top = 387
           Width = 772
-          Height = 79
+          Height = 78
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -797,18 +797,15 @@ object Form7: TForm7
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
           ParentFont = False
-          Visible = False
           OnClick = SpeedButton2Click
-          ExplicitLeft = 1
-          ExplicitTop = 381
-          ExplicitWidth = 774
+          ExplicitTop = 392
         end
         object SpeedButton3: TSpeedButton
           AlignWithMargins = True
           Left = 2
-          Top = 314
+          Top = 310
           Width = 772
-          Height = 76
+          Height = 75
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -821,18 +818,15 @@ object Form7: TForm7
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
           ParentFont = False
-          Visible = False
           OnClick = SpeedButton3Click
-          ExplicitLeft = 1
-          ExplicitTop = 309
-          ExplicitWidth = 774
+          ExplicitTop = 314
         end
         object SpeedButton4: TSpeedButton
           AlignWithMargins = True
           Left = 2
-          Top = 236
+          Top = 233
           Width = 772
-          Height = 76
+          Height = 75
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -846,14 +840,14 @@ object Form7: TForm7
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = SpeedButton4Click
-          ExplicitLeft = 1
+          ExplicitTop = 236
         end
         object SpeedButton5: TSpeedButton
           AlignWithMargins = True
           Left = 2
-          Top = 158
+          Top = 156
           Width = 772
-          Height = 76
+          Height = 75
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -867,15 +861,14 @@ object Form7: TForm7
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = SpeedButton5Click
-          ExplicitLeft = 0
-          ExplicitTop = 124
+          ExplicitTop = 158
         end
         object SpeedButton6: TSpeedButton
           AlignWithMargins = True
           Left = 2
-          Top = 80
+          Top = 79
           Width = 772
-          Height = 76
+          Height = 75
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -889,16 +882,14 @@ object Form7: TForm7
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = SpeedButton6Click
-          ExplicitLeft = 1
-          ExplicitTop = 78
-          ExplicitWidth = 774
+          ExplicitTop = 80
         end
         object SpeedButton7: TSpeedButton
           AlignWithMargins = True
           Left = 2
           Top = 2
           Width = 772
-          Height = 76
+          Height = 75
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -912,39 +903,13 @@ object Form7: TForm7
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = SpeedButton7Click
-          ExplicitLeft = 1
-          ExplicitTop = 1
-          ExplicitWidth = 774
-        end
-        object SpeedButton8: TSpeedButton
-          AlignWithMargins = True
-          Left = 2
-          Top = 629
-          Width = 772
-          Height = 76
-          Margins.Left = 1
-          Margins.Top = 1
-          Margins.Right = 1
-          Margins.Bottom = 1
-          Align = alTop
-          Caption = #1054#1092#1080#1090#1089#1080#1072#1085#1090#1083#1072#1088' '#1203#1080#1089#1086#1073#1080
-          Font.Charset = RUSSIAN_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -21
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
-          OnClick = SpeedButton8Click
-          ExplicitLeft = 1
-          ExplicitTop = 457
-          ExplicitWidth = 774
         end
         object SpeedButton9: TSpeedButton
           AlignWithMargins = True
           Left = 2
-          Top = 551
+          Top = 467
           Width = 772
-          Height = 76
+          Height = 75
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -957,35 +922,7 @@ object Form7: TForm7
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
           ParentFont = False
-          Visible = False
           OnClick = SpeedButton9Click
-          ExplicitLeft = 1
-          ExplicitTop = 457
-          ExplicitWidth = 774
-        end
-        object SpeedButton10: TSpeedButton
-          AlignWithMargins = True
-          Left = 2
-          Top = 473
-          Width = 772
-          Height = 76
-          Margins.Left = 1
-          Margins.Top = 1
-          Margins.Right = 1
-          Margins.Bottom = 1
-          Align = alTop
-          Caption = #1057#1086#1090#1091#1074#1083#1072#1088' '#1203#1080#1089#1086#1073#1080'('#1082#1072#1073#1086#1073#1083#1072#1088')'
-          Font.Charset = RUSSIAN_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -21
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
-          Visible = False
-          OnClick = SpeedButton10Click
-          ExplicitLeft = 1
-          ExplicitTop = 457
-          ExplicitWidth = 774
         end
       end
     end
@@ -1467,7 +1404,7 @@ object Form7: TForm7
         Left = 3
         Top = 3
         Width = 556
-        Height = 582
+        Height = 687
         Align = alLeft
         Caption = #1050#1072#1090#1077#1075#1086#1088#1080#1103#1083#1072#1088
         TabOrder = 0
@@ -1475,7 +1412,7 @@ object Form7: TForm7
           Left = 2
           Top = 120
           Width = 552
-          Height = 460
+          Height = 565
           Align = alClient
           DataSource = db.DataSourceKategoriya
           Font.Charset = RUSSIAN_CHARSET
@@ -1527,7 +1464,7 @@ object Form7: TForm7
         Left = 565
         Top = 3
         Width = 581
-        Height = 582
+        Height = 687
         Align = alClient
         Caption = #1057#1090#1086#1083#1083#1072#1088
         TabOrder = 1
@@ -1535,7 +1472,7 @@ object Form7: TForm7
           Left = 2
           Top = 120
           Width = 577
-          Height = 460
+          Height = 565
           Align = alClient
           DataSource = db.DataSourcestol
           Font.Charset = RUSSIAN_CHARSET
@@ -1596,51 +1533,19 @@ object Form7: TForm7
           TabOrder = 1
         end
       end
-      object GroupBox5: TGroupBox
-        Left = 0
-        Top = 588
-        Width = 1149
-        Height = 105
-        Align = alBottom
-        Caption = #1061#1080#1079#1084#1072#1090' '#1203#1072#1179#1080' (% '#1083#1072#1088#1076#1072')'
-        Font.Charset = RUSSIAN_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -21
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 2
-        object DBEdit1: TDBEdit
-          Left = 267
-          Top = 48
-          Width = 329
-          Height = 32
-          DataField = 'qiymati'
-          DataSource = db.dsfoiz
-          Font.Charset = RUSSIAN_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -21
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 0
-        end
-        object Button26: TButton
-          Left = 635
-          Top = 48
-          Width = 178
-          Height = 33
-          Caption = #1058#1072#1089#1076#1080#1179#1083#1072#1096
-          Font.Charset = RUSSIAN_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -24
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 1
-          OnClick = Button26Click
-        end
-      end
+    end
+    object Card10: TCard
+      Left = 1
+      Top = 1
+      Width = 1149
+      Height = 693
+      Caption = 'savdo'
+      CardIndex = 9
+      TabOrder = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 185
+      ExplicitHeight = 41
     end
   end
   object SplitView: TSplitView
@@ -1654,7 +1559,6 @@ object Form7: TForm7
     Placement = svpLeft
     TabOrder = 1
     StyleName = 'Windows10 SlateGray'
-    OnClosing = SplitViewClosing
     OnOpening = SplitViewOpening
     object pnlToolbar: TPanel
       Left = 0

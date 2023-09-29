@@ -20,7 +20,7 @@ object Form7: TForm7
     Width = 1151
     Height = 695
     Align = alClient
-    ActiveCard = Card6
+    ActiveCard = Card10
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -710,7 +710,7 @@ object Form7: TForm7
       Top = 1
       Width = 1149
       Height = 693
-      Caption = 'Card5'
+      Caption = 'Hisobotlar'
       CardIndex = 4
       TabOrder = 4
       object Panel1: TPanel
@@ -1404,7 +1404,7 @@ object Form7: TForm7
         Left = 3
         Top = 3
         Width = 556
-        Height = 582
+        Height = 687
         Align = alLeft
         Caption = #1050#1072#1090#1077#1075#1086#1088#1080#1103#1083#1072#1088
         TabOrder = 0
@@ -1412,7 +1412,7 @@ object Form7: TForm7
           Left = 2
           Top = 120
           Width = 552
-          Height = 460
+          Height = 565
           Align = alClient
           DataSource = db.DataSourceKategoriya
           Font.Charset = RUSSIAN_CHARSET
@@ -1464,7 +1464,7 @@ object Form7: TForm7
         Left = 565
         Top = 3
         Width = 581
-        Height = 582
+        Height = 687
         Align = alClient
         Caption = #1057#1090#1086#1083#1083#1072#1088
         TabOrder = 1
@@ -1472,7 +1472,7 @@ object Form7: TForm7
           Left = 2
           Top = 120
           Width = 577
-          Height = 460
+          Height = 565
           Align = alClient
           DataSource = db.DataSourcestol
           Font.Charset = RUSSIAN_CHARSET
@@ -1533,49 +1533,109 @@ object Form7: TForm7
           TabOrder = 1
         end
       end
-      object GroupBox5: TGroupBox
+    end
+    object Card10: TCard
+      Left = 1
+      Top = 1
+      Width = 1149
+      Height = 693
+      Caption = 'savdo'
+      CardIndex = 9
+      TabOrder = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object DBGrid9: TDBGrid
         Left = 0
-        Top = 588
+        Top = 0
         Width = 1149
-        Height = 105
-        Align = alBottom
-        Caption = #1061#1080#1079#1084#1072#1090' '#1203#1072#1179#1080' (% '#1083#1072#1088#1076#1072')'
+        Height = 630
+        Align = alClient
+        DataSource = db.Dssavdo
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
-        Font.Height = -21
+        Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         ParentFont = False
-        TabOrder = 2
-        object DBEdit1: TDBEdit
-          Left = 267
-          Top = 48
-          Width = 329
-          Height = 32
-          DataField = 'qiymati'
-          DataSource = db.dsfoiz
-          Font.Charset = RUSSIAN_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -21
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
+        TabOrder = 0
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -19
+        TitleFont.Name = 'Sitka Banner'
+        TitleFont.Style = [fsBold]
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'Stol'
+            Width = 500
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'summa'
+            Width = 311
+            Visible = True
+          end>
+      end
+      object GridPanel3: TGridPanel
+        Left = 0
+        Top = 630
+        Width = 1149
+        Height = 63
+        Align = alBottom
+        Color = clWhite
+        ColumnCollection = <
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 6
+            ColumnSpan = 2
+            Control = Button10
+            Row = 0
+          end>
+        ParentBackground = False
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        TabOrder = 1
+        object Button10: TButton
+          AlignWithMargins = True
+          Left = 864
+          Top = 4
+          Width = 274
+          Height = 55
+          Margins.Right = 10
+          Align = alClient
+          Caption = 'To'#39'lash'
           TabOrder = 0
-        end
-        object Button26: TButton
-          Left = 635
-          Top = 48
-          Width = 178
-          Height = 33
-          Caption = #1058#1072#1089#1076#1080#1179#1083#1072#1096
-          Font.Charset = RUSSIAN_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -24
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 1
-          OnClick = Button26Click
+          OnClick = Button10Click
         end
       end
     end
@@ -1591,7 +1651,6 @@ object Form7: TForm7
     Placement = svpLeft
     TabOrder = 1
     StyleName = 'Windows10 SlateGray'
-    OnClosing = SplitViewClosing
     OnOpening = SplitViewOpening
     object pnlToolbar: TPanel
       Left = 0

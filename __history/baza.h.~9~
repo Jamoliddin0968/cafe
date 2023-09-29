@@ -65,8 +65,6 @@ __published:	// IDE-managed Components
 	TfrxReportTableObject *frxReportTableObject1;
 	TADOQuery *yordamchi;
 	TADOQuery *pomosh;
-	TADOQuery *AdoQuerySavdo;
-	TDataSource *Dssavdo;
 	void __fastcall ADOprixodCalcFields(TDataSet *DataSet);
 	void __fastcall ADOprixodnomiValidate(TField *Sender);
 

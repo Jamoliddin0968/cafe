@@ -12,9 +12,9 @@
 #include "Unit8.h"
 #include "unit12.h"
 #include "Unit9.h"
-#include "unit13.h"
-#include "unit11.h"
-#include "unit14.h"
+#include "Unit13.h"
+#include "Unit11.h"
+#include "Unit14.h"
 #include "Unit6.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -198,6 +198,7 @@ void __fastcall TForm7::MarketingButtonClick(TObject *Sender)
 {
 	Form4->CardPanel1->ActiveCardIndex = 0;
 	Form4->ShowModal();
+//    CardPanel1->ActiveCardIndex=9;
 }
 //---------------------------------------------------------------------------
 
@@ -205,7 +206,7 @@ void __fastcall TForm7::MarketingButtonClick(TObject *Sender)
 
 void __fastcall TForm7::DBGrid7CellClick(TColumn *Column)
 {
-	  db->ADOtarkib->SQL->Text = "select * from tarkibview where menyuid = '"+db->ADOQuerymenyu->FieldByName("id")->AsString+"'";
+	 db->ADOtarkib->SQL->Text = "select * from tarkibview where menyuid = '"+db->ADOQuerymenyu->FieldByName("id")->AsString+"'";
 	db->ADOtarkib->Open();
 }
 //---------------------------------------------------------------------------
@@ -313,13 +314,6 @@ void __fastcall TForm7::Button25Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm7::Button26Click(TObject *Sender)
-{
-	 db->yordamchi->Close();
-	 db->yordamchi->SQL->Text = "update maxsus set qiymati = '"+DBEdit1->Text+"'";
-	 db->yordamchi->ExecSQL();
-}
-//---------------------------------------------------------------------------
 
 
 
@@ -442,6 +436,32 @@ void __fastcall TForm7::Button7Click(TObject *Sender)
 
     Form14->ShowModal();
 
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm7::Button10Click(TObject *Sender)
+{
+	 if (db->AdoQuerySavdo->RecordCount > 0) {
+		Form2->Label3->Caption = db->AdoQuerySavdo->FieldByName("summa")->AsString;
+		Form2->Label1->Caption = "Stol\t" + db->AdoQuerySavdo->FieldByName("stol")->AsString;
+		Form2->Label1->Hint = db->AdoQuerySavdo->FieldByName("stol")->AsString;
+		Form2->ShowModal();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm7::Button8Click(TObject *Sender)
+{
+	db->AdoQuerySavdo->Active=0;
+    db->AdoQuerySavdo->Active=1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm7::Timer1Timer(TObject *Sender)
+{
+    Button8->Click();
 }
 //---------------------------------------------------------------------------
 

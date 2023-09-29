@@ -1682,4 +1682,19 @@ object db: Tdb
     Left = 656
     Top = 328
   end
+  object AdoQuerySavdo: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from savdo;')
+    Left = 608
+    Top = 456
+  end
+  object Dssavdo: TDataSource
+    DataSet = AdoQuerySavdo
+    Left = 704
+    Top = 440
+  end
 end

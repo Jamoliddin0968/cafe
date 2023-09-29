@@ -146,12 +146,6 @@ object db: Tdb
     Left = 472
     Top = 136
   end
-  object yordamchi: TADOQuery
-    Connection = ADOConnection1
-    Parameters = <>
-    Left = 24
-    Top = 32
-  end
   object frxReport4: TfrxReport
     Version = '6.9.14'
     DotMatrixReport = False
@@ -174,6 +168,7 @@ object db: Tdb
       item
       end
       item
+        DataSet = Form4.soboy
         DataSetName = 'frxDBDataset3'
       end
       item
@@ -564,6 +559,7 @@ object db: Tdb
         Height = 22.677180000000000000
         Top = 188.976500000000000000
         Width = 718.110700000000000000
+        DataSet = Form4.frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object Shape1: TfrxShapeView
@@ -578,6 +574,7 @@ object db: Tdb
           Width = 151.181200000000000000
           Height = 18.897650000000000000
           DataField = 'xizmat'
+          DataSet = Form4.frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Frame.Typ = []
           HAlign = haRight
@@ -606,6 +603,7 @@ object db: Tdb
           Width = 86.929190000000000000
           Height = 18.897650000000000000
           DataField = 'chegirma'
+          DataSet = Form4.frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Frame.Typ = []
           HAlign = haRight
@@ -620,6 +618,7 @@ object db: Tdb
           Top = 3.779530000000000000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
+          DataSet = Form4.frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -642,6 +641,7 @@ object db: Tdb
           Left = 419.527830000000000000
           Width = 128.504020000000000000
           Height = 18.897650000000000000
+          DataSet = Form4.frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -664,6 +664,7 @@ object db: Tdb
           Left = 578.268090000000000000
           Width = 132.283550000000000000
           Height = 18.897650000000000000
+          DataSet = Form4.frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -939,6 +940,7 @@ object db: Tdb
         Height = 22.677180000000000000
         Top = 200.315090000000000000
         Width = 718.110700000000000000
+        DataSet = Form4.soboy
         DataSetName = 'frxDBDataset3'
         RowCount = 0
         object Shape1: TfrxShapeView
@@ -954,6 +956,7 @@ object db: Tdb
           Width = 359.055350000000000000
           Height = 22.677180000000000000
           DataField = 'izoh'
+          DataSet = Form4.soboy
           DataSetName = 'frxDBDataset3'
           Frame.Typ = []
           Memo.UTF8W = (
@@ -981,6 +984,7 @@ object db: Tdb
           Width = 132.283550000000000000
           Height = 18.897650000000000000
           DataField = 'summa'
+          DataSet = Form4.soboy
           DataSetName = 'frxDBDataset3'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -997,6 +1001,7 @@ object db: Tdb
           Width = 158.740260000000000000
           Height = 18.897650000000000000
           DataField = 'vaqt'
+          DataSet = Form4.soboy
           DataSetName = 'frxDBDataset3'
           Frame.Typ = []
           Memo.UTF8W = (
@@ -1288,6 +1293,7 @@ object db: Tdb
         Height = 22.677180000000000000
         Top = 207.874150000000000000
         Width = 718.110700000000000000
+        DataSet = Form4.frxDBDataset2
         DataSetName = 'frxDBDataset2'
         RowCount = 0
         object Shape1: TfrxShapeView
@@ -1304,6 +1310,7 @@ object db: Tdb
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'nomi'
+          DataSet = Form4.frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
@@ -1324,6 +1331,7 @@ object db: Tdb
           Width = 83.149660000000000000
           Height = 18.897650000000000000
           DataField = 'miqdor'
+          DataSet = Form4.frxDBDataset2
           DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -1347,6 +1355,7 @@ object db: Tdb
           Width = 90.708720000000000000
           Height = 18.897650000000000000
           DataField = 'sotishnarx'
+          DataSet = Form4.frxDBDataset2
           DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -1370,6 +1379,7 @@ object db: Tdb
           Width = 132.283550000000000000
           Height = 18.897650000000000000
           DataField = 'jami'
+          DataSet = Form4.frxDBDataset2
           DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
@@ -1394,6 +1404,7 @@ object db: Tdb
           Width = 113.385900000000000000
           Height = 18.897650000000000000
           DataField = 'vaqt'
+          DataSet = Form4.frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
@@ -1655,5 +1666,25 @@ object db: Tdb
   object frxReportTableObject1: TfrxReportTableObject
     Left = 152
     Top = 480
+  end
+  object yordamchi: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select 1+1 as sum;')
+    Left = 672
+    Top = 256
+  end
+  object pomosh: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 656
+    Top = 328
+  end
+  object AdoQuerySavdo: TADOQuery
+    Parameters = <>
+    Left = 608
+    Top = 456
   end
 end

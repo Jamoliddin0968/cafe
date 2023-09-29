@@ -108,7 +108,13 @@ __published:	// IDE-managed Components
 	TDatePicker *DatePicker1;
 	TDatePicker *DatePicker2;
 	TButton *Button7;
-	void __fastcall SplitViewClosing(TObject *Sender);
+	TCard *Card10;
+	TDBGrid *DBGrid9;
+	TGridPanel *GridPanel3;
+	TButton *Button10;
+	TButton *Button8;
+//	void __fastcall Sender);
+void __fastcall SplitViewClosing(TObject *Sender);
 	void __fastcall SplitViewOpening(TObject *Sender);
 	void __fastcall MenuVirtualImageClick(TObject *Sender);
 	void __fastcall DashboardButtonClick(TObject *Sender);
@@ -137,7 +143,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button22Click(TObject *Sender);
 	void __fastcall SearchBox4Change(TObject *Sender);
 	void __fastcall Button25Click(TObject *Sender);
-	void __fastcall Button26Click(TObject *Sender);
+//	void __fastcall Button26Click(TObject *Sender);
 	void __fastcall SpeedButton7Click(TObject *Sender);
 	void __fastcall SpeedButton6Click(TObject *Sender);
 	void __fastcall SpeedButton5Click(TObject *Sender);
@@ -150,6 +156,8 @@ __published:	// IDE-managed Components
 	void __fastcall SpeedButton10Click(TObject *Sender);
 	void __fastcall FormActivate(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
+	void __fastcall Button10Click(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
 //	void __fastcall Button7Click(TObject *Sender);
 
 private:	// User declarations

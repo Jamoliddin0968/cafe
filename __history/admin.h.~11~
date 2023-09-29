@@ -97,9 +97,6 @@ __published:	// IDE-managed Components
 	TDBNavigator *DBNavigator2;
 	TDBGrid *DBGrid11;
 	TDBNavigator *DBNavigator3;
-	TGroupBox *GroupBox5;
-	TDBEdit *DBEdit1;
-	TButton *Button26;
 	TPanel *Panel3;
 	TSpeedButton *SpeedButton2;
 	TSpeedButton *SpeedButton3;
@@ -111,7 +108,9 @@ __published:	// IDE-managed Components
 	TDatePicker *DatePicker1;
 	TDatePicker *DatePicker2;
 	TButton *Button7;
-	void __fastcall SplitViewClosing(TObject *Sender);
+	TCard *Card10;
+//	void __fastcall Sender);
+void __fastcall SplitViewClosing(TObject *Sender);
 	void __fastcall SplitViewOpening(TObject *Sender);
 	void __fastcall MenuVirtualImageClick(TObject *Sender);
 	void __fastcall DashboardButtonClick(TObject *Sender);
@@ -140,7 +139,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button22Click(TObject *Sender);
 	void __fastcall SearchBox4Change(TObject *Sender);
 	void __fastcall Button25Click(TObject *Sender);
-	void __fastcall Button26Click(TObject *Sender);
+//	void __fastcall Button26Click(TObject *Sender);
 	void __fastcall SpeedButton7Click(TObject *Sender);
 	void __fastcall SpeedButton6Click(TObject *Sender);
 	void __fastcall SpeedButton5Click(TObject *Sender);

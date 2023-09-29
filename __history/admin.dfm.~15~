@@ -20,7 +20,7 @@ object Form7: TForm7
     Width = 1151
     Height = 695
     Align = alClient
-    ActiveCard = Card3
+    ActiveCard = Card10
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -564,7 +564,30 @@ object Form7: TForm7
             Title.Font.Height = -19
             Title.Font.Name = 'Times New Roman'
             Title.Font.Style = [fsBold]
-            Width = 195
+            Width = 108
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'xizmat'
+            Title.Caption = #1061#1080#1079#1084#1072#1090' '#1203#1072#1179#1080
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'xodim'
+            Title.Caption = #1061#1086#1076#1080#1084
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Width = 200
             Visible = True
           end
           item
@@ -576,7 +599,6 @@ object Form7: TForm7
             Title.Font.Height = -19
             Title.Font.Name = 'Times New Roman'
             Title.Font.Style = [fsBold]
-            Width = 352
             Visible = True
           end>
       end

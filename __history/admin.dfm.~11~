@@ -20,7 +20,7 @@ object Form7: TForm7
     Width = 1151
     Height = 695
     Align = alClient
-    ActiveCard = Card3
+    ActiveCard = Card10
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -564,7 +564,30 @@ object Form7: TForm7
             Title.Font.Height = -19
             Title.Font.Name = 'Times New Roman'
             Title.Font.Style = [fsBold]
-            Width = 195
+            Width = 108
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'xizmat'
+            Title.Caption = #1061#1080#1079#1084#1072#1090' '#1203#1072#1179#1080
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'xodim'
+            Title.Caption = #1061#1086#1076#1080#1084
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Width = 200
             Visible = True
           end
           item
@@ -576,7 +599,6 @@ object Form7: TForm7
             Title.Font.Height = -19
             Title.Font.Name = 'Times New Roman'
             Title.Font.Style = [fsBold]
-            Width = 352
             Visible = True
           end>
       end
@@ -1530,7 +1552,7 @@ object Form7: TForm7
         Width = 1149
         Height = 630
         Align = alClient
-        DataSource = db.Dssavdo
+        DataSource = db.DataSourcexodimlar
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -1547,15 +1569,83 @@ object Form7: TForm7
         Columns = <
           item
             Expanded = False
-            FieldName = 'Stol'
-            Width = 500
+            FieldName = 'id'
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'fish'
+            Title.Caption = #1060#1048#1064
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Width = 364
             Visible = True
           end
           item
             Expanded = False
-            FieldName = 'summa'
-            Width = 311
+            FieldName = 'Lavozim'
+            Title.Caption = #1051#1072#1074#1086#1079#1080#1084
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Width = 189
             Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'manzil'
+            Title.Caption = #1052#1072#1085#1079#1080#1083
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Width = 224
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'telefon'
+            Title.Caption = #1058#1077#1083#1077#1092#1086#1085
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Width = 242
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'parol'
+            Title.Caption = #1055#1072#1088#1086#1083
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'huquq'
+            Title.Caption = #1202#1091#1179#1091#1179
+            Title.Font.Charset = ANSI_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -19
+            Title.Font.Name = 'Times New Roman'
+            Title.Font.Style = [fsBold]
+            Visible = False
           end>
       end
       object GridPanel3: TGridPanel
@@ -1596,11 +1686,6 @@ object Form7: TForm7
             ColumnSpan = 2
             Control = Button10
             Row = 0
-          end
-          item
-            Column = 0
-            Control = Button8
-            Row = 0
           end>
         ParentBackground = False
         RowCollection = <
@@ -1619,22 +1704,6 @@ object Form7: TForm7
           Caption = 'To'#39'lash'
           TabOrder = 0
           OnClick = Button10Click
-        end
-        object Button8: TButton
-          AlignWithMargins = True
-          Left = 4
-          Top = 4
-          Width = 130
-          Height = 55
-          Margins.Right = 10
-          Align = alClient
-          Caption = 'Yangilash'
-          TabOrder = 1
-          OnClick = Button8Click
-          ExplicitLeft = 35
-          ExplicitTop = 19
-          ExplicitWidth = 75
-          ExplicitHeight = 25
         end
       end
     end
@@ -4208,11 +4277,5 @@ object Form7: TForm7
       end>
     Left = 72
     Top = 504
-  end
-  object Timer1: TTimer
-    Interval = 20000
-    OnTimer = Timer1Timer
-    Left = 672
-    Top = 352
   end
 end

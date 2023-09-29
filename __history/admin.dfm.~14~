@@ -20,7 +20,7 @@ object Form7: TForm7
     Width = 1151
     Height = 695
     Align = alClient
-    ActiveCard = Card9
+    ActiveCard = Card10
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -710,7 +710,7 @@ object Form7: TForm7
       Top = 1
       Width = 1149
       Height = 693
-      Caption = 'Card5'
+      Caption = 'Hisobotlar'
       CardIndex = 4
       TabOrder = 4
       object Panel1: TPanel
@@ -1408,7 +1408,6 @@ object Form7: TForm7
         Align = alLeft
         Caption = #1050#1072#1090#1077#1075#1086#1088#1080#1103#1083#1072#1088
         TabOrder = 0
-        ExplicitHeight = 582
         object DBGrid10: TDBGrid
           Left = 2
           Top = 120
@@ -1469,7 +1468,6 @@ object Form7: TForm7
         Align = alClient
         Caption = #1057#1090#1086#1083#1083#1072#1088
         TabOrder = 1
-        ExplicitHeight = 582
         object DBGrid11: TDBGrid
           Left = 2
           Top = 120
@@ -1536,6 +1534,132 @@ object Form7: TForm7
         end
       end
     end
+    object Card10: TCard
+      Left = 1
+      Top = 1
+      Width = 1149
+      Height = 693
+      Caption = 'savdo'
+      CardIndex = 9
+      TabOrder = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object DBGrid9: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 1149
+        Height = 630
+        Align = alClient
+        DataSource = db.Dssavdo
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
+        TabOrder = 0
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -19
+        TitleFont.Name = 'Sitka Banner'
+        TitleFont.Style = [fsBold]
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'Stol'
+            Width = 500
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'summa'
+            Width = 311
+            Visible = True
+          end>
+      end
+      object GridPanel3: TGridPanel
+        Left = 0
+        Top = 630
+        Width = 1149
+        Height = 63
+        Align = alBottom
+        Color = clWhite
+        ColumnCollection = <
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end
+          item
+            Value = 12.500000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 6
+            ColumnSpan = 2
+            Control = Button10
+            Row = 0
+          end
+          item
+            Column = 0
+            Control = Button8
+            Row = 0
+          end>
+        ParentBackground = False
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        TabOrder = 1
+        object Button10: TButton
+          AlignWithMargins = True
+          Left = 864
+          Top = 4
+          Width = 274
+          Height = 55
+          Margins.Right = 10
+          Align = alClient
+          Caption = 'To'#39'lash'
+          TabOrder = 0
+          OnClick = Button10Click
+        end
+        object Button8: TButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 4
+          Width = 130
+          Height = 55
+          Margins.Right = 10
+          Align = alClient
+          Caption = 'Yangilash'
+          TabOrder = 1
+          OnClick = Button8Click
+          ExplicitLeft = 35
+          ExplicitTop = 19
+          ExplicitWidth = 75
+          ExplicitHeight = 25
+        end
+      end
+    end
   end
   object SplitView: TSplitView
     Left = 0
@@ -1548,7 +1672,6 @@ object Form7: TForm7
     Placement = svpLeft
     TabOrder = 1
     StyleName = 'Windows10 SlateGray'
-    OnClosing = SplitViewClosing
     OnOpening = SplitViewOpening
     object pnlToolbar: TPanel
       Left = 0

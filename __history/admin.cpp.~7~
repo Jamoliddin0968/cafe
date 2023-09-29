@@ -443,26 +443,7 @@ void __fastcall TForm7::Button7Click(TObject *Sender)
 
 void __fastcall TForm7::Button10Click(TObject *Sender)
 {
-	 if (db->AdoQuerySavdo->RecordCount > 0) {
-		Form2->Label3->Caption = db->AdoQuerySavdo->FieldByName("summa")->AsString;
-		Form2->Label1->Caption = "Stol\t" + db->AdoQuerySavdo->FieldByName("stol")->AsString;
-		Form2->Label1->Hint = db->AdoQuerySavdo->FieldByName("stol")->AsString;
-		orm4->SpeedButton1->Hint       =db->AdoQuerySavdo->FieldByName("stol")->AsString;
-		Form2->ShowModal();
-	}
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm7::Button8Click(TObject *Sender)
-{
-	db->AdoQuerySavdo->Active=0;
-    db->AdoQuerySavdo->Active=1;
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm7::Timer1Timer(TObject *Sender)
-{
-    Button8->Click();
+    ShowMessage("tuhafi) ;
 }
 //---------------------------------------------------------------------------
 

@@ -66,7 +66,6 @@ __published:	// IDE-managed Components
 	TADOQuery *yordamchi;
 	TADOQuery *pomosh;
 	TADOQuery *AdoQuerySavdo;
-	TDataSource *Dssavdo;
 	void __fastcall ADOprixodCalcFields(TDataSet *DataSet);
 	void __fastcall ADOprixodnomiValidate(TField *Sender);
 

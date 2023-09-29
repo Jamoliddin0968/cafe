@@ -20,7 +20,7 @@ object Form7: TForm7
     Width = 1151
     Height = 695
     Align = alClient
-    ActiveCard = Card10
+    ActiveCard = Card9
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -1534,19 +1534,6 @@ object Form7: TForm7
         end
       end
     end
-    object Card10: TCard
-      Left = 1
-      Top = 1
-      Width = 1149
-      Height = 693
-      Caption = 'zakaz'
-      CardIndex = 9
-      TabOrder = 9
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 185
-      ExplicitHeight = 41
-    end
   end
   object SplitView: TSplitView
     Left = 0
@@ -1559,7 +1546,6 @@ object Form7: TForm7
     Placement = svpLeft
     TabOrder = 1
     StyleName = 'Windows10 SlateGray'
-    OnClosing = SplitViewClosing
     OnOpening = SplitViewOpening
     object pnlToolbar: TPanel
       Left = 0
